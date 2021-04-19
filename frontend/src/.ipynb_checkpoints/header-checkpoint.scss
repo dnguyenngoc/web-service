@@ -1,0 +1,148 @@
+.header{
+    font-family: nt-dapper, -apple-system, system-ui, BlinkMacSystemFont, 
+        "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    font-size: 16px;
+    text-size-adjust: 100%;
+    display: flex;
+    .header__tag {
+        padding: 32px 18px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        box-sizing: border-box;
+        margin: 0;
+        min-width: 0;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-left: 20rem;
+        .header__tag__padding{
+             width: 27rem;
+        }
+        .header__tag__content{
+            margin-left: 4rem;
+            display: flex;
+            .header__tag__content__field{
+                margin-left: 3rem;
+                 color: #686868;
+                
+            }
+            .header__tag__content__field:hover{
+                color: black;
+            }
+            .header__tag__content__github{
+                margin-left: 3rem;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                margin-top: -0.4rem;
+                padding-right: 1.1rem;
+                color: white;
+                background: black;
+                display: flex;
+                border-bottom-left-radius: 50% 100%;
+                border-bottom-right-radius: 50% 100%;
+                border-top-left-radius: 50% 100%;
+                border-top-right-radius: 50% 100%;
+                .header__tag__content__github__text{
+                    font-size: 12px;
+                    letter-spacing: 0.5px;
+                    color: #9CA8B3;
+                    line-height: 1.2;
+                    color: #1A192B;
+                }
+                .header__tag__content__github_icon{
+                    padding-left: 0.5rem;
+                    img{
+                        margin-bottom: -0.2rem;
+                        padding-right: 0.3rem;
+                        margin-left: 0.1rem;
+                        width: 23px;
+                        height: 23px;
+                    }
+
+                }
+            }
+            .header__tag__content__github:hover{
+                background-color: #DC143C;
+            }
+        }
+    }
+    .header__content {
+        box-sizing: border-box;
+        margin: 0;
+        min-width: 0;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 24px 16px;
+        .header__content__digi__logo{
+            margin-left: 5rem;
+            margin-right: 2rem;
+            background: white;
+        }
+     
+        .header__content__standard{  
+            box-sizing: border-box;
+            margin: 0;
+            min-width: 0;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            .header__content__standard__logo {
+                display: block;
+                width: 40px;
+                margin-right: 12px;
+            }
+            .header__content__standard__detail{
+                display: block;
+                box-sizing: border-box;
+                margin: 0;
+                min-width: 0;
+                text-decoration: none;
+                .header__content__standard__detail__title{
+                    box-sizing: border-box;
+                    margin: 0;
+                    min-width: 0;
+                    font-weight: 900;
+                    font-size: 24px;
+                    letter-spacing: 0.5px;
+                    line-height: 1.2;
+                    color: #1A192B;
+                }
+                .header__content__standard__detail__explain{
+                    box-sizing: border-box;
+                    margin: 0;
+                    min-width: 0;
+                    font-size: 12px;
+                    letter-spacing: 0.5px;
+                    color: #9CA8B3;
+                    line-height: 1.2;
+
+                }
+            }
+        }
+    }
+}
+
+.none__text__decoration{
+    text-decoration: none;
+}
+
+
+.block__content{
+    display: block;
+}
