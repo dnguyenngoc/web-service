@@ -46,7 +46,7 @@ const Header = withRouter(({ history, location }) => {
               <div className='header__tag__content'>
                 <a className = 'header__tag__content__field none__text__decoration' href='/'>Home</a>
                 <a className = 'header__tag__content__field none__text__decoration' href='/workflow'>Processing</a>
-                <a className = 'header__tag__content__github none__text__decoration' href='https://github.com/dnguyenngoc/web-service'>
+                <a className = 'header__tag__content__github none__text__decoration' href='https://git.digi-texx.vn/dbdd-solution-team/pi-cluster-webscan'>
                   <div className = 'header__tag__content__github_icon'>
                     <img src = {GithubLogo}></img>
                   </div>
