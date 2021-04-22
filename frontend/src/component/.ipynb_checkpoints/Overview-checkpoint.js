@@ -1,4 +1,4 @@
-import React, { useState, useEffect, MouseEvent, CSSProperties } from 'react';
+import React, { useState, useEffect, MouseEvent, CSSProperties, Component } from 'react';
 
 import ReactFlow, {
   removeElements,
@@ -18,10 +18,22 @@ import ReactFlow, {
   Edge,
 } from 'react-flow-renderer';
 
+import ImagePreview from './ImagePreview.js'
+
 // import initialElements from '../assets/datas/OverviewInitial.js';
 
 import '../styles/container.scss'
 
+import  id_test from '../assets/images/id.PNG'
+import  name_test from '../assets/images/name.PNG'
+import  add_test from '../assets/images/address.PNG'
+import  home_test from '../assets/images/home town.PNG'
+import  birth_test from '../assets/images/birth.PNG'
+
+
+const UpdateNode = () => {
+  const [elements, setElements] = useState(initialElements);
+}
 
 const initialElements = [
   { id: '1', type: 'input', data: {label: (<><strong>Import Data</strong> (2000)</>),}, position: { x: 700, y: 50 }, style: {width: 200}},
@@ -37,36 +49,55 @@ const initialElements = [
   { id: 'e3-4', source: '3', target: '4', animated: true, label: 'Extract',},
   { id: 'e4-5', source: '4', target: '5', animated: true, label: 'OCR',},
   { id: 'e5-6', source: '5', target: '6', animated: true, label: 'Transform',},
-  { id: 'e5-7', source: '5', target: '7', animated: true, label: 'Transform',},
-
-    
+  { id: 'e5-7', source: '5', target: '7', animated: true, label: 'Transform',},  
 ]
 
-const UpdateNode = () => {
-  const [elements, setElements] = useState(initialElements);
-}
+class Overview extends Component {
+    constructor(props) {
+    super(props);
+      this.state = {
+        elements: initialElements,
+        typeShow: false,
+      }
+    }
+    
+    handleClick(type) {
+        if (type == 'identity_card') this.setState({typeShow: false});  
+        else if (type == 'full_workflow') this.setState({typeShow: true});
+    }
+    render() {
+        return (
+            <div className='overview'>
+              <div className='overview__content'>
+                <div className='overview__content__group'>
+                  <a
+                     onClick={() => this.handleClick('full_workflow')}
+                     className='overview__content__field margin__top__40 overview__content__field__select' >Full Workflow
+                  </a>
+                  <a className='overview__content__field' onClick={() => this.handleClick('identity_card')}>Identity Card</a>
+                  <a className='overview__content__field'>Discharge Record</a>
 
-const Overview = () => {
-  const [elements, setElements] = useState(initialElements);
-  return (
-    <div className='overview'>
-      <div className='overview__content'>
-        <div className='overview__content__group'>
-           <a className='overview__content__field margin__top__40 overview__content__field__select'>Full Workflow</a>
-          <a className='overview__content__field'>Identity Card Import</a>
-          <a className='overview__content__field'>Discharge Record Import</a>
-          <a className='overview__content__field'>Identity Card Field</a>
-          <a className='overview__content__field'>Discharge Record Field</a>
-          <a className='overview__content__field'>Identity Card Transform</a>
-          <a className='overview__content__field'>Discharge Record Transform</a>
-        </div>
-      </div>
-      <ReactFlow className='overview__graph'
-          elements={elements}
-       ></ReactFlow>
-      
-    </div>
-  
-  );
+                </div>
+              </div>
+            {this.state.typeShow == true ? <ReactFlow className='overview__graph' elements={this.state.elements}></ReactFlow>
+                : <ImagePreview 
+                     origin='https://viknews.com/vi/wp-content/uploads/2019/04/lam-lai-cmnd5.jpg' 
+                     crop='https://viknews.com/vi/wp-content/uploads/2019/04/lam-lai-cmnd5.jpg' 
+                     fields = {[
+                                   {'name': 'ID Number', 'value': id_test}, 
+                                   {'name': 'Full Name', 'value': name_test},
+                                   {'name': 'Birthday', 'value': birth_test},
+                                   {'name': 'Home Town', 'value': home_test},
+                                   {'name': 'Address', 'value': add_test},
+                               ]}/>}
+            </div>
+        );
+    }
 }
+    
 export default Overview;
+
+//                   <a className='overview__content__field'>Identity Card Field</a>
+//                   <a className='overview__content__field'>Discharge Record Field</a>
+//                   <a className='overview__content__field'>Identity Card Transform</a>
+//                   <a className='overview__content__field'>Discharge Record Transform</a>
