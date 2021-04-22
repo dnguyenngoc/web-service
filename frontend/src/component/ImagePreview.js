@@ -32,13 +32,13 @@ class ImagePreview extends Component {
       <div className='image-preview'>
         <div className='main-content'>
           <div className = 'origin'>
-             <p>Origin Image</p>
+             <p className = 'name-fix'>Origin Image</p>
              <a>
                <img className = 'image-fix' src = {origin}></img>
              </a>
           </div>
           <div className = 'crop'>
-             <p>Crop Image</p>
+             <p className = 'name-fix'>Crop Image</p>
              <a>
                <img className = 'image-fix' src = {crop}></img>
              </a>
