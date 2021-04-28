@@ -1,6 +1,6 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, DateTime, Boolean, DECIMAL
 from sqlalchemy.orm import relationship
-from database.db import Base, engine, db_session
+from databases.db import Base, engine, db_session
 
     
 class Status(Base):

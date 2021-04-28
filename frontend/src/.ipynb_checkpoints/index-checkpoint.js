@@ -32,10 +32,10 @@ const Header = withRouter(({ history, location }) => {
                 <img src={Logo} className='header__content__standard__logo'></img>
                 <div className='header__content__standard__detail'>
                   <div className='header__content__standard__detail__title'>
-                    Web Scanning
+                    DPB
                   </div>
                   <div className='header__content__standard__detail__explain'>
-                    A project design by Data Team
+                    Document Processing Box by Data Team
                   </div>
                 </div>
               </a>
@@ -45,7 +45,7 @@ const Header = withRouter(({ history, location }) => {
               <div className='header__tag__padding'></div>
               <div className='header__tag__content'>
                 <a className = 'header__tag__content__field none__text__decoration' href='/'>Home</a>
-                <a className = 'header__tag__content__field none__text__decoration' href='/workflow'>Processing</a>
+                <a className = 'header__tag__content__field none__text__decoration' href='https://digi-texx.vn/contact-us'>Contact Us</a>
                 <a className = 'header__tag__content__github none__text__decoration' href='https://git.digi-texx.vn/dbdd-solution-team/pi-cluster-webscan'>
                   <div className = 'header__tag__content__github_icon'>
                     <img src = {GithubLogo}></img>

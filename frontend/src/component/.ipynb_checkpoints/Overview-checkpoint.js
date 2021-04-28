@@ -24,6 +24,7 @@ import ImagePreview from './ImagePreview.js'
 
 import '../styles/container.scss'
 
+import  cmnd_test from '../assets/images/cmnd-test-1.jpg'
 import  id_test from '../assets/images/id.PNG'
 import  name_test from '../assets/images/name.PNG'
 import  add_test from '../assets/images/address.PNG'
@@ -72,7 +73,7 @@ class Overview extends Component {
                 <div className='overview__content__group'>
                   <a
                      onClick={() => this.handleClick('full_workflow')}
-                     className='overview__content__field margin__top__40 overview__content__field__select' >Full Workflow
+                     className='overview__content__field margin__top__40' >Full Workflow
                   </a>
                   <a className='overview__content__field' onClick={() => this.handleClick('identity_card')}>Identity Card</a>
                   <a className='overview__content__field'>Discharge Record</a>
@@ -81,8 +82,8 @@ class Overview extends Component {
               </div>
             {this.state.typeShow == true ? <ReactFlow className='overview__graph' elements={this.state.elements}></ReactFlow>
                 : <ImagePreview 
-                     origin='https://viknews.com/vi/wp-content/uploads/2019/04/lam-lai-cmnd5.jpg' 
-                     crop='https://viknews.com/vi/wp-content/uploads/2019/04/lam-lai-cmnd5.jpg' 
+                     origin= {{'name': 'origin','value': cmnd_test}}
+                     crop={{'name': 'crop','value': cmnd_test}}
                      fields = {[
                                    {'name': 'ID Number', 'value': id_test}, 
                                    {'name': 'Full Name', 'value': name_test},
@@ -96,8 +97,3 @@ class Overview extends Component {
 }
     
 export default Overview;
-
-//                   <a className='overview__content__field'>Identity Card Field</a>
-//                   <a className='overview__content__field'>Discharge Record Field</a>
-//                   <a className='overview__content__field'>Identity Card Transform</a>
-//                   <a className='overview__content__field'>Discharge Record Transform</a>

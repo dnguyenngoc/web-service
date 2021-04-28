@@ -34,13 +34,13 @@ class ImagePreview extends Component {
           <div className = 'origin'>
              <p className = 'name-fix'>Origin Image</p>
              <a>
-               <img className = 'image-fix' src = {origin}></img>
+               <img className = 'image-fix' src = {origin.value}></img>
              </a>
           </div>
           <div className = 'crop'>
              <p className = 'name-fix'>Crop Image</p>
              <a>
-               <img className = 'image-fix' src = {crop}></img>
+               <img className = 'image-fix' src = {crop.value}></img>
              </a>
           </div>
         </div>
