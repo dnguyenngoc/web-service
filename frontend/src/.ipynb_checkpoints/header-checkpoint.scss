@@ -22,7 +22,7 @@
         align-items: center;
         padding-left: 20rem;
         .header__tag__padding{
-             width: 27rem;
+             width: 18rem;
         }
         .header__tag__content{
             margin-left: 4rem;
@@ -35,8 +35,25 @@
             .header__tag__content__field:hover{
                 color: black;
             }
+            .header__tag__content__pi{
+                margin-left: 2rem;     
+                background: white;
+                height: 2.3rem;
+                .header__tag__content__github_icon{
+                    img{
+                        width: auto;
+                        height: 40px;
+                         margin-top: -5px;
+                    }
+                }
+            }
+            .header__tag__content__pi:hover{
+                img{
+                    background: green;
+                }
+            }
             .header__tag__content__github{
-                margin-left: 3rem;
+                margin-left: 2rem;
                 padding-top: 0.5rem;
                 padding-bottom: 0.5rem;
                 margin-top: -0.4rem;

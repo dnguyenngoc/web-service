@@ -9,6 +9,7 @@ import Overview from './component/Overview.js';
 
 import Logo from './assets/images/logo.svg'
 import GithubLogo from './assets/images/github.png'
+import PiLogo from './assets/images/pi_logo.png'
 import DigiLogo from './assets/images/digi-logo.png'
 
 const routes = [
@@ -46,12 +47,18 @@ const Header = withRouter(({ history, location }) => {
               <div className='header__tag__content'>
                 <a className = 'header__tag__content__field none__text__decoration' href='/'>Home</a>
                 <a className = 'header__tag__content__field none__text__decoration' href='https://digi-texx.vn/contact-us'>Contact Us</a>
+                <a className = 'header__tag__content__pi none__text__decoration'  href='https://www.raspberrypi.org/'>
+                    <div className = 'header__tag__content__github_icon'>
+                        <img src = {PiLogo}></img>
+                    </div>
+                </a>
                 <a className = 'header__tag__content__github none__text__decoration' href='https://git.digi-texx.vn/dbdd-solution-team/pi-cluster-webscan'>
                   <div className = 'header__tag__content__github_icon'>
                     <img src = {GithubLogo}></img>
                   </div>
                   Github
-                </a>       
+                </a>
+             
               </div>
             </div>
           </nav>

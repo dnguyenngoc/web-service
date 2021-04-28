@@ -8,9 +8,9 @@ class ImagePreview extends Component {
     this.state = {
       origin: this.props.origin,
       crop: this.props.crop,
-      fields: this.props.fields
+      fields: this.props.fields,
+      typeShow: this.props.typeShow,
     };
-    console.log(this.props)
   }
     
   makeFieldData(fields) {
@@ -18,7 +18,7 @@ class ImagePreview extends Component {
         fields.map((field) =>    
           <div className = 'details'>
             <p className = 'field-name'>{field.name}</p>
-            <a>
+            <a className = 'field-image'>
               <img src = {field.value}></img>
             </a>
           </div>
@@ -27,9 +27,9 @@ class ImagePreview extends Component {
   }
 
   render() {
-    const { origin, crop, fields } = this.state;
+    const { origin, crop, fields, typeShow } = this.state;
     return (
-      <div className='image-preview'>
+      <div className={ typeShow == 1 ? 'image-preview' : 'image-preview1' }>
         <div className='main-content'>
           <div className = 'origin'>
              <p className = 'name-fix'>Origin Image</p>
@@ -44,9 +44,7 @@ class ImagePreview extends Component {
              </a>
           </div>
         </div>
-        <div className='field-content'>
-          {this.makeFieldData(fields)}
-        </div>
+        <div className='field-content'>{this.makeFieldData(fields)}</div> 
       </div>
     );
   }

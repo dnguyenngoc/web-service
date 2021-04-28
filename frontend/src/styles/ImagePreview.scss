@@ -58,5 +58,73 @@
        }
      }
   }
+}
 
+.image-preview1{
+    font-family: nt-dapper, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.7;
+    font-size: 16px;
+  display: flex;
+    padding-left: 13rem;
+    padding-top: 1.2rem;
+    
+    
+  .main-content{
+    width: 490px;
+    .origin{
+       height: 350px;
+      .image-fix{
+        width: 400px;
+        height: auto;
+      }
+      .name-fix{
+        padding-left: 1rem;
+        width: 110px;
+        border-radius: 25px;
+        background: #C0C0C0;
+      }
+    }
+    .crop{
+      margin-top: 2rem;
+      height: 350px;
+      .image-fix{
+        width: 400px;
+        height: auto;
+      }
+      .name-fix{
+        padding-left: 1rem;
+        width: 110px;
+        border-radius: 25px;
+        background: #C0C0C0;
+      }
+    }
+  }
+  .field-content{
+     margin-top: 2rem;
+     display: block;
+     .details{
+       width: 1000px;
+       display: flex;
+         .field-image{
+            margin-left: 1rem;
+            margin-top: 1rem;
+             
+            height: 40px;
+            img{
+              max-width: 70%;
+              max-height: 200%;
+              border-radius: 10px;
+            }
+         }
+       .field-name{
+//           text-indent: 10px;
+          width: 200px;
+          height: 30px;
+          text-align: center;
+          background: #FFE4E1;
+       }
+     }
+  }
 }
