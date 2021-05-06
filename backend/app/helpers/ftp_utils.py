@@ -35,6 +35,10 @@ class FTP(object):
         temp.seek(0)
         self.sess.storbinary('STOR ./{path}'.format(path=path), temp)
 
+    def upload_byte_image(self, byte_image, path):
+        temp = io.BytesIO(byte_image)
+        self.sess.storbinary('STOR ./{path}'.format(path=path), temp)
+
     def chdir(self, dir): 
         try:
             self.sess.mkd(dir)
