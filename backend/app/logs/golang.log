@@ -28,3 +28,13 @@ Traceback (most recent call last):
   File "/opt/jupyter/lib/python3.8/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
     raise LocalProtocolError("illegal request line")
 h11._util.RemoteProtocolError: illegal request line
+2021-05-06 09:32:46,656 - INFO - Started server process [13307]
+2021-05-06 09:32:46,656 - INFO - Waiting for application startup.
+2021-05-06 09:32:46,657 - INFO - Application startup complete.
+2021-05-06 09:32:46,658 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-06 09:52:45,569 - INFO - Shutting down
+2021-05-06 09:52:45,672 - INFO - Finished server process [13307]
+2021-05-06 09:52:47,188 - INFO - Started server process [13903]
+2021-05-06 09:52:47,189 - INFO - Waiting for application startup.
+2021-05-06 09:52:47,189 - INFO - Application startup complete.
+2021-05-06 09:52:47,190 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)

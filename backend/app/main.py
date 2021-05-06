@@ -30,7 +30,9 @@ app.include_router(v1.router, prefix="/api/v1", tags=["V1"])
 origins = [
     "http://{host}".format(host=config.HOST_NAME),
     "http://{host}:{port}".format(host=config.HOST_NAME, port = config.BE_PORT),
-    "http://{host}:{port}".format(host=config.HOST_NAME, port = config.FE_PORT)
+    "http://{host}:{port}".format(host=config.HOST_NAME, port = config.FE_PORT),
+    "http://10.1.33.76:8080",
+    "http://10.1.33.76:8081",
 ]
 app.add_middleware(
     CORSMiddleware,
