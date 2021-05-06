@@ -1,12 +1,30 @@
-2021-04-23 01:21:25,118 - INFO - Shutting down
-2021-04-23 01:21:25,219 - INFO - Waiting for application shutdown.
-2021-04-23 01:21:25,219 - INFO - Application shutdown complete.
-2021-04-23 01:21:25,220 - INFO - Finished server process [13433]
-2021-04-23 01:21:39,044 - INFO - Started server process [13928]
-2021-04-23 01:21:39,045 - INFO - Waiting for application startup.
-2021-04-23 01:21:39,046 - INFO - Application startup complete.
-2021-04-23 01:21:39,047 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
-2021-04-23 01:33:11,625 - INFO - Shutting down
-2021-04-23 01:33:11,726 - INFO - Waiting for application shutdown.
-2021-04-23 01:33:11,726 - INFO - Application shutdown complete.
-2021-04-23 01:33:11,727 - INFO - Finished server process [13928]
+2021-05-06 09:17:18,438 - WARNING - Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 172, in handle_events
+    event = self.conn.next_event()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
+2021-05-06 09:17:18,778 - WARNING - Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 172, in handle_events
+    event = self.conn.next_event()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line

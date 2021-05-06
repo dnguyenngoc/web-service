@@ -1,0 +1,263 @@
+2021-04-28 14:42:19,217 - INFO - Started server process [25937]
+2021-04-28 14:42:19,217 - INFO - Waiting for application startup.
+2021-04-28 14:42:19,217 - INFO - Application startup complete.
+2021-04-28 14:42:19,218 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-04-28 14:44:09,524 - INFO - Shutting down
+2021-04-28 14:44:09,625 - INFO - Waiting for application shutdown.
+2021-04-28 14:44:09,626 - INFO - Application shutdown complete.
+2021-04-28 14:44:09,626 - INFO - Finished server process [25937]
+2021-04-28 14:44:11,690 - INFO - Started server process [26036]
+2021-04-28 14:44:11,691 - INFO - Waiting for application startup.
+2021-04-28 14:44:11,691 - INFO - Application startup complete.
+2021-04-28 14:44:11,691 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-04-28 14:45:05,853 - INFO - BEGIN (implicit)
+2021-04-28 14:45:05,874 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id, document_type_1.id AS document_type_1_id, document_type_1.name AS document_type_1_name, document_type_1.description AS document_type_1_description, document_type_1.create_date AS document_type_1_create_date, document_type_1.update_date AS document_type_1_update_date, status_1.id AS status_1_id, status_1.status_code AS status_1_status_code, status_1.status_name AS status_1_status_name, status_1.description AS status_1_description, status_1.create_date AS status_1_create_date, status_1.update_date AS status_1_update_date, document_split_1.id AS document_split_1_id, document_split_1.name AS document_split_1_name, document_split_1.value AS document_split_1_value, document_split_1.is_extracted AS document_split_1_is_extracted, document_split_1.url AS document_split_1_url, document_split_1.create_date AS document_split_1_create_date, document_split_1.update_date AS document_split_1_update_date, document_split_1.type_id AS document_split_1_type_id, document_split_1.document_id AS document_split_1_document_id 
+FROM document LEFT OUTER JOIN document_type AS document_type_1 ON document_type_1.id = document.type_id LEFT OUTER JOIN status AS status_1 ON status_1.id = document.status_id LEFT OUTER JOIN document_split AS document_split_1 ON document.id = document_split_1.document_id 
+WHERE document.type_id = ? AND document.status_id = ? AND document.export_date = ? ORDER BY document.export_date DESC
+2021-04-28 14:45:05,881 - INFO - [generated in 0.00629s] ('1', 100, '2021-04-28')
+2021-04-28 14:45:05,887 - INFO - ROLLBACK
+2021-04-28 14:45:05,888 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 44, in db_session_middleware
+    request.state.db.close()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1723, in close
+    self._close_impl(invalidate=False)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1765, in _close_impl
+    transaction.close(invalidate)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 923, in close
+    transaction.close()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2221, in close
+    self._do_close()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2430, in _do_close
+    self._close_impl()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2416, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2408, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 898, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1929, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 896, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 666, in do_rollback
+    dbapi_connection.rollback()
+sqlalchemy.exc.ProgrammingError: (sqlite3.ProgrammingError) SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140691201984256 and this is thread id 140691262342976.
+(Background on this error at: http://sqlalche.me/e/14/f405)
+2021-04-28 14:45:40,371 - INFO - Shutting down
+2021-04-28 14:45:40,471 - INFO - Waiting for application shutdown.
+2021-04-28 14:45:40,472 - INFO - Application shutdown complete.
+2021-04-28 14:45:40,472 - INFO - Finished server process [26036]
+2021-04-28 14:58:59,214 - INFO - Started server process [26051]
+2021-04-28 14:58:59,215 - INFO - Waiting for application startup.
+2021-04-28 14:58:59,216 - INFO - Application startup complete.
+2021-04-28 14:58:59,216 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-04-28 15:02:58,685 - INFO - BEGIN (implicit)
+2021-04-28 15:02:58,699 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id, document_type_1.id AS document_type_1_id, document_type_1.name AS document_type_1_name, document_type_1.description AS document_type_1_description, document_type_1.create_date AS document_type_1_create_date, document_type_1.update_date AS document_type_1_update_date, status_1.id AS status_1_id, status_1.status_code AS status_1_status_code, status_1.status_name AS status_1_status_name, status_1.description AS status_1_description, status_1.create_date AS status_1_create_date, status_1.update_date AS status_1_update_date, document_split_1.id AS document_split_1_id, document_split_1.name AS document_split_1_name, document_split_1.value AS document_split_1_value, document_split_1.is_extracted AS document_split_1_is_extracted, document_split_1.url AS document_split_1_url, document_split_1.create_date AS document_split_1_create_date, document_split_1.update_date AS document_split_1_update_date, document_split_1.type_id AS document_split_1_type_id, document_split_1.document_id AS document_split_1_document_id 
+FROM document LEFT OUTER JOIN document_type AS document_type_1 ON document_type_1.id = document.type_id LEFT OUTER JOIN status AS status_1 ON status_1.id = document.status_id LEFT OUTER JOIN document_split AS document_split_1 ON document.id = document_split_1.document_id 
+WHERE document.type_id = ? AND document.status_id = ? AND document.export_date = ? ORDER BY document.export_date DESC
+2021-04-28 15:02:58,700 - INFO - [generated in 0.00108s] ('1', 100, '2021-04-28')
+2021-04-28 15:02:58,705 - INFO - ROLLBACK
+2021-04-28 15:02:58,708 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 44, in db_session_middleware
+    request.state.db.close()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1723, in close
+    self._close_impl(invalidate=False)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1765, in _close_impl
+    transaction.close(invalidate)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 923, in close
+    transaction.close()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2221, in close
+    self._do_close()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2430, in _do_close
+    self._close_impl()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2416, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2408, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 898, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1929, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 896, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 666, in do_rollback
+    dbapi_connection.rollback()
+sqlalchemy.exc.ProgrammingError: (sqlite3.ProgrammingError) SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139681515341568 and this is thread id 139681575700288.
+(Background on this error at: http://sqlalche.me/e/14/f405)
+2021-04-28 15:03:07,349 - INFO - Shutting down
+2021-04-28 15:03:07,450 - INFO - Waiting for application shutdown.
+2021-04-28 15:03:07,450 - INFO - Application shutdown complete.
+2021-04-28 15:03:07,450 - INFO - Finished server process [26051]
+2021-04-28 15:03:07,497 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 670, in _finalize_fairy
+    fairy._reset(pool)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 875, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 666, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139681515341568 and this is thread id 139681575700288.
+2021-04-28 15:03:07,499 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7f0a23495e40>
+Traceback (most recent call last):
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 670, in _finalize_fairy
+    fairy._reset(pool)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 875, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 666, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139681515341568 and this is thread id 139681575700288.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 238, in _close_connection
+    self._dialect.do_close(connection)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 672, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 139681515341568 and this is thread id 139681575700288.
+2021-04-28 15:03:16,048 - INFO - Started server process [26056]
+2021-04-28 15:03:16,054 - INFO - Waiting for application startup.
+2021-04-28 15:03:16,054 - INFO - Application startup complete.
+2021-04-28 15:03:16,055 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-04-28 15:03:17,693 - INFO - BEGIN (implicit)
+2021-04-28 15:03:17,712 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id, document_type_1.id AS document_type_1_id, document_type_1.name AS document_type_1_name, document_type_1.description AS document_type_1_description, document_type_1.create_date AS document_type_1_create_date, document_type_1.update_date AS document_type_1_update_date, status_1.id AS status_1_id, status_1.status_code AS status_1_status_code, status_1.status_name AS status_1_status_name, status_1.description AS status_1_description, status_1.create_date AS status_1_create_date, status_1.update_date AS status_1_update_date, document_split_1.id AS document_split_1_id, document_split_1.name AS document_split_1_name, document_split_1.value AS document_split_1_value, document_split_1.is_extracted AS document_split_1_is_extracted, document_split_1.url AS document_split_1_url, document_split_1.create_date AS document_split_1_create_date, document_split_1.update_date AS document_split_1_update_date, document_split_1.type_id AS document_split_1_type_id, document_split_1.document_id AS document_split_1_document_id 
+FROM document LEFT OUTER JOIN document_type AS document_type_1 ON document_type_1.id = document.type_id LEFT OUTER JOIN status AS status_1 ON status_1.id = document.status_id LEFT OUTER JOIN document_split AS document_split_1 ON document.id = document_split_1.document_id 
+WHERE document.type_id = ? AND document.status_id = ? AND document.export_date = ? ORDER BY document.export_date DESC
+2021-04-28 15:03:17,722 - INFO - [generated in 0.01013s] ('1', 100, '2021-04-28')
+2021-04-28 15:03:17,724 - INFO - ROLLBACK
+2021-04-28 15:03:17,729 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 44, in db_session_middleware
+    request.state.db.close()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1723, in close
+    self._close_impl(invalidate=False)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1765, in _close_impl
+    transaction.close(invalidate)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 923, in close
+    transaction.close()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2221, in close
+    self._do_close()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2430, in _do_close
+    self._close_impl()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2416, in _close_impl
+    self._connection_rollback_impl()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2408, in _connection_rollback_impl
+    self.connection._rollback_impl()
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 898, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1929, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 896, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 666, in do_rollback
+    dbapi_connection.rollback()
+sqlalchemy.exc.ProgrammingError: (sqlite3.ProgrammingError) SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140065367070464 and this is thread id 140065427429184.
+(Background on this error at: http://sqlalche.me/e/14/f405)
+2021-04-28 15:07:25,867 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 670, in _finalize_fairy
+    fairy._reset(pool)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 875, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 666, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140065367070464 and this is thread id 140065427429184.
+2021-04-28 15:07:25,868 - ERROR - Exception closing connection <sqlite3.Connection object at 0x7f6382a1dc60>
+Traceback (most recent call last):
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 670, in _finalize_fairy
+    fairy._reset(pool)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 875, in _reset
+    pool._dialect.do_rollback(self)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 666, in do_rollback
+    dbapi_connection.rollback()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140065367070464 and this is thread id 140065427429184.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 238, in _close_connection
+    self._dialect.do_close(connection)
+  File "/home/pot/.conda/envs/tf_2.4.1_cpu/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 672, in do_close
+    dbapi_connection.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140065367070464 and this is thread id 140065427429184.
+2021-04-28 15:23:24,781 - INFO - Shutting down
+2021-04-28 15:23:24,881 - INFO - Waiting for application shutdown.
+2021-04-28 15:23:24,882 - INFO - Application shutdown complete.
+2021-04-28 15:23:24,882 - INFO - Finished server process [26056]
+2021-04-28 15:23:48,898 - INFO - Started server process [26083]
+2021-04-28 15:23:48,907 - INFO - Waiting for application startup.
+2021-04-28 15:23:48,908 - INFO - Application startup complete.
+2021-04-28 15:23:48,909 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-04-28 15:27:09,110 - INFO - Shutting down
+2021-04-28 15:27:09,211 - INFO - Waiting for application shutdown.
+2021-04-28 15:27:09,211 - INFO - Application shutdown complete.
+2021-04-28 15:27:09,212 - INFO - Finished server process [26083]
+2021-04-28 15:27:11,399 - INFO - Started server process [26090]
+2021-04-28 15:27:11,406 - INFO - Waiting for application startup.
+2021-04-28 15:27:11,407 - INFO - Application startup complete.
+2021-04-28 15:27:11,408 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-04-28 15:28:21,608 - INFO - Shutting down
+2021-04-28 15:28:21,709 - INFO - Waiting for connections to close. (CTRL+C to force quit)
+2021-04-28 15:28:21,910 - INFO - Finished server process [26090]

@@ -27,7 +27,11 @@ app.include_router(v1.router, prefix="/api/v1", tags=["V1"])
 
 
 # Cors middleware
-origins = ["http://localhost","http://localhost:8080", "http://localhost:8081"]
+origins = [
+    "http://{host}".format(host=config.HOST_NAME),
+    "http://{host}:{port}".format(host=config.HOST_NAME, port = config.BE_PORT),
+    "http://{host}:{port}".format(host=config.HOST_NAME, port = config.FE_PORT)
+]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -46,4 +50,4 @@ async def db_session_middleware(request: Request, call_next):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host='0.0.0.0',port=8081,debug=True)
+    uvicorn.run(app, host='0.0.0.0',port=config.BE_PORT,debug=True)

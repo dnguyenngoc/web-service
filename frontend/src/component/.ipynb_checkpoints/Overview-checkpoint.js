@@ -1,130 +1,179 @@
-import React, { useState, useEffect, MouseEvent, CSSProperties, Component } from 'react';
+import React, { Component } from 'react';
 
 import ReactFlow, {
-  removeElements,
-  addEdge,
-  MiniMap,
-  Controls,
-  Background,
-  isNode,
-  Node,
-  Elements,
-  FlowElement,
-  OnLoadParams,
-  FlowTransform,
-  SnapGrid,
-  ArrowHeadType,
-  Connection,
-  Edge,
+//   removeElements,
+//   addEdge,
+//   MiniMap,
+//   Controls,
+//   Background,
+//   isNode,
+//   Node,
+//   Elements,
+//   FlowElement,
+//   OnLoadParams,
+//   FlowTransform,
+//   SnapGrid,
+//   ArrowHeadType,
+//   Connection,
+//   Edge,
 } from 'react-flow-renderer';
-
 import ImagePreview from './ImagePreview.js'
-
-// import initialElements from '../assets/datas/OverviewInitial.js';
-
 import '../styles/container.scss'
 
 
-// TEST DATA +++++++++++++++++++++++++++++++++++++++++++
-import  cmnd_test from '../assets/images/cmnd-test-1.jpg'
-import  id_test from '../assets/images/id.PNG'
-import  name_test from '../assets/images/name.PNG'
-import  add_test from '../assets/images/address.PNG'
-import  home_test from '../assets/images/home town.PNG'
-import  birth_test from '../assets/images/birth.PNG'
-
-import  dr_test from '../assets/images/dr-test1.JPG'
-import  dr_crop from '../assets/images/dr-crop.jpg'
-import  dr_full_name from '../assets/images/dr-full-name.png'
-import  dr_age from '../assets/images/dr-age.png'
-import  dr_nation from '../assets/images/dr-nation.png'
-import  dr_gender from '../assets/images/dr-gender.png'
-import  dr_id from '../assets/images/dr-id.png'
-import  dr_come from '../assets/images/dr-come.png'
-import  dr_out from '../assets/images/dr-out.png'
-import  dr_note from '../assets/images/dr-note.png'
-import  dr_solu from '../assets/images/dr-solu.png'
-import  dr_diag from '../assets/images/dr-diag.png'
-import  dr_add from '../assets/images/dr-address.png'
-// TEST DATA +++++++++++++++++++++++++++++++++++++++++++
+const API_SERVER = 'http://161.117.87.31:8081/api'
 
 
-const UpdateNode = () => {
-  const [elements, setElements] = useState(initialElements);
+function getCurrentDate(separator='-'){
+    let newDate = new Date()
+    let date = newDate.getDate();
+    let month = newDate.getMonth() + 1;
+    let year = newDate.getFullYear();
+    return `${year}${separator}${month<10?`0${month}`:`${month}`}${separator}${date<10?`0${date}`:`${date}`}`
 }
 
-const initialElements = [
-  { id: '1', type: 'input', data: {label: (<><strong>Import Data</strong> (2000)</>),}, position: { x: 700, y: 50 }, style: {width: 200}},
-  { id: '2', data: {label: (<>Identity Card<br/><a>Good: 500</a><br/><a>Bad: 500</a></>),}, position: { x: 500, y: 150 }},
-  { id: '3', data: {label: (<>Discharge Record<br/> <a>Good: 500</a><br/><a>Bad: 500</a></>),}, position: { x: 1000, y: 150 }},
-  { id: '4', data: {label: (<>ML Field Extract<br/><a>Status: Processing</a> <br/><a>ID_Card: 200</a> <br/> <a>D_Record: 200</a> </>),}, position: { x: 750, y: 300 }},
-  { id: '5', data: {label: (<>ML Ocr<br/> <a>Status: Processing</a> <br/><a>ID_Card: 200</a> <br/> <a>D_Record: 200</a> </>),}, position: { x: 750, y: 450 }},
-  { id: '6', type: 'output', data: {label: (<><strong>Identity Card Transform</strong> (100)</>),}, position: { x: 500, y: 600 }},
-  { id: '7', type: 'output', data: {label: (<><strong>Discharge Record Transform</strong> (100)</>),}, position: { x: 1000, y: 600 }},
-  { id: 'e1-2', source: '1', target: '2', label: 'Classify',},
-  { id: 'e1-3', source: '1', target: '3', label: 'Classify',},
-  { id: 'e2-4', source: '2', target: '4', animated: true, label: 'Extract',},
-  { id: 'e3-4', source: '3', target: '4', animated: true, label: 'Extract',},
-  { id: 'e4-5', source: '4', target: '5', animated: true, label: 'OCR',},
-  { id: 'e5-6', source: '5', target: '6', animated: true, label: 'Transform',},
-  { id: 'e5-7', source: '5', target: '7', animated: true, label: 'Transform',},  
-]
 
 class Overview extends Component {
     constructor(props) {
     super(props);
       this.state = {
-        elements: initialElements,
+        elements: [],
         typeShow: 0,
         origin: {},
         crop: {},
         fields: [],
+        selectId: 0,
+        day: getCurrentDate(),
+        fullWorflow: {
+            import: 0,
+            identityCardGood: 0,
+            identityCardBad: 0,
+            dischargeRecordGood: 0,
+            dischargeRecordBad: 0,
+            fieldExtractIdentityCard: 0,
+            fieldExtractDischargeRecord: 0,
+            ocrIdentityCard: 0,
+            ocrDischargeRecord: 0,
+            transformIdentityCard: 0,
+            transformDischargeRecord: 0
+        },
+        identityCard: {
+            len: 0,
+            data: [],
+           
+        },
+         dischargeRecord: {
+            len: 0,
+            data: [],
+        },
+        isLoading: true,
       }
     }
+
+    async componentDidMount(){
+        await fetch(API_SERVER + '/v1/worflow-v1/preview/full-worflow/pipeline', { method: 'GET'})
+            .then(response => response.json())
+            .then(data => {
+                 this.setState({fullWorflow: data})
+            }
+        );
+        const initElementLinking = [
+          { id: 'e1-2', source: '1', target: '2', label: 'Classify',},
+          { id: 'e1-3', source: '1', target: '3', label: 'Classify',},
+          { id: 'e2-4', source: '2', target: '4', animated: true, label: 'Extract',},
+          { id: 'e3-4', source: '3', target: '4', animated: true, label: 'Extract',},
+          { id: 'e4-5', source: '4', target: '5', animated: true, label: 'OCR',},
+          { id: 'e5-6', source: '5', target: '6', animated: true, label: 'Transform',},
+          { id: 'e5-7', source: '5', target: '7', animated: true, label: 'Transform',},
+        ]
+      const importData = { 
+          id: '1', 
+          type: 'input',
+          data: {label: (<><strong>Import Data</strong> ({this.state.fullWorflow.import})</>),}, 
+          position: { x: 700, y: 50 }, 
+          style: {width: 200}
+      }
+      const identityCard = { 
+          id: '2', 
+          data: {label: (<>Identity Card<br/><a>Good: {this.state.fullWorflow.identityCardGood}</a><br/><a>Bad: {this.state.fullWorflow.identityCardBad}</a></>),}, 
+          position: { x: 500, y: 150}
+      }
+      const dischargeRecord = { 
+          id: '3', 
+          data: {label: (<>Discharge Record<br/> <a>Good: {this.state.fullWorflow.dischargeRecordGood}</a><br/>
+                <a>Bad: {this.state.fullWorflow.dischargeRecordBad}</a></>),}, 
+          position: { x: 1000, y: 150 }
+     }
+      const fieldExtract = { 
+          id: '4', 
+          data: {label: (<>ML Field Extract<br/><a>ID_Card: {this.state.fullWorflow.fieldExtractIdentityCard}</a>
+                <br/> <a>D_Record: {this.state.fullWorflow.fieldExtractDischargeRecord}</a> </>),}, 
+          position: { x: 750, y: 300 }
+      }
+      const ocr = {
+          id: '5', 
+          data: {label: (<>ML Ocr<br/><a>ID_Card: {this.state.fullWorflow.ocrIdentityCard}</a> <br/>
+              <a>D_Record: {this.state.fullWorflow.ocrDischargeRecord}</a> </>),}, 
+          position: { x: 750, y: 450 }
+      }
+      const transformIdentityCard = { 
+          id: '6', 
+          type: 'output',
+          data: {label: (<><strong>Identity Card Transform</strong> ({this.state.fullWorflow.transformIdentityCard})</>),}, 
+          position: { x: 500, y: 600 }
+      }
+      const transformDischargeRecord = { 
+          id: '7', 
+          type: 'output', 
+          data: {label: (<><strong>Discharge Record Transform</strong> ({this.state.fullWorflow.transformDischargeRecord})</>),}, 
+          position: { x: 1000, y: 600 }
+      }
+      const initialElements = [importData, identityCard, dischargeRecord, fieldExtract, ocr, transformIdentityCard, transformDischargeRecord]
+      const initialElementsEnd = initialElements.concat(initElementLinking);
+      this.setState({elements: initialElementsEnd})
+    }
     
-    handleClick(type) {
-        if (type == 'full_workflow') {
-            this.setState({typeShow: 0})
-            console.log(1)
+    async handleClick(type, date = this.state.day) {
+       if (type === 'identity_card') {
+            const dataId = new FormData()
+            dataId.append('type_name', 'identity_card');
+            dataId.append('status_name', 'export');
+            dataId.append('day', this.state.day);
+            const requestOptions = { method: 'POST', body: dataId}
+            await fetch(API_SERVER + '/v1/worflow-v1/preview/identity-card', requestOptions)
+                .then(response => response.json())
+                .then(data => {
+                    this.setState({identityCard: {data: data, len: data.length}})
+                }
+            );
+            await this.setState({
+                origin: this.state.identityCard.data[0].origin, 
+                crop: this.state.identityCard.data[0].crop,
+                fields: this.state.identityCard.data[0].fields,
+                typeShow: 1,
+            });
+        } else if (type === 'discharge_record'){
+            const dataId = new FormData()
+            dataId.append('type_name', type);
+            dataId.append('status_name', 'export');
+            dataId.append('day', this.state.day);
+            await fetch(API_SERVER + '/v1/worflow-v1/preview/identity-card', { method: 'POST', body: dataId})
+                .then(response => response.json())
+                .then(data => {
+                    this.setState({dischargeRecord: {data: data, len: data.length}})
+                }
+            );
+            await this.setState({
+                origin: this.state.dischargeRecord.data[0].origin, 
+                crop: this.state.dischargeRecord.data[0].crop,
+                fields: this.state.dischargeRecord.data[0].fields,
+                typeShow: 2,
+            });
         }
-        else if (type == 'identity_card') {
-            console.log(2)
-            this.setState({
-                typeShow: 1, 
-                origin: {'name': 'origin', 'value': cmnd_test}, 
-                crop: {'name': 'crop', 'value': cmnd_test}, 
-                fields: [
-                    {'name': 'ID Number', 'value': id_test}, 
-                    {'name': 'Full Name', 'value': name_test},
-                    {'name': 'Birthday', 'value': birth_test},
-                    {'name': 'Home Town', 'value': home_test},
-                    {'name': 'Address', 'value': add_test},
-                ]
-            });  
-        } else {
-            console.log(3)
-            this.setState({
-                typeShow: 2, 
-                origin: {'name': 'origin', 'value': dr_test}, 
-                crop: {'name': 'crop', 'value': dr_crop}, 
-                fields: [
-                    {'name': 'Patient Name', 'value': dr_full_name}, 
-                    {'name': 'Age Or DOB', 'value': dr_age},
-                    {'name': 'Gender', 'value': dr_gender},
-                    {'name': 'Nation', 'value': dr_nation},
-                    {'name': 'Insurance Number', 'value': dr_id},
-                    {'name': 'Address', 'value': dr_add},
-                    {'name': 'Event Start Date', 'value': dr_come},
-                    {'name': 'Event End Date', 'value': dr_out},
-                    {'name': 'Diagnosis Description', 'value': dr_diag},
-                    {'name': 'Treatment Description', 'value': dr_solu},
-                    {'name': 'Note', 'value': dr_note},
-                ]
-            });  
-        };
+        else this.setState({typeShow: 0})
     }
     render() {
-        const { origin, crop, fields, typeShow } = this.state;
+        const {typeShow, origin, crop, fields, isLoading } = this.state;
         return (
             <div className='overview'>
               <div className='overview__content'>
@@ -138,7 +187,7 @@ class Overview extends Component {
                 </div>
               </div>
             {
-                this.state.typeShow == 0 ? <ReactFlow className='overview__graph' elements={this.state.elements}></ReactFlow>
+                this.state.typeShow === 0 ? <ReactFlow className='overview__graph' elements={this.state.elements}></ReactFlow>
                     : <ImagePreview 
                          key={typeShow}
                          origin= {origin}

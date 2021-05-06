@@ -1,4 +1,4 @@
-import React, { useState, useEffect, MouseEvent, CSSProperties, Component } from 'react';
+import React, { Component } from 'react';
 
 import '../styles/ImagePreview.scss'
 
@@ -29,7 +29,7 @@ class ImagePreview extends Component {
   render() {
     const { origin, crop, fields, typeShow } = this.state;
     return (
-      <div className={ typeShow == 1 ? 'image-preview' : 'image-preview1' }>
+      <div className={ typeShow === 1 ? 'image-preview' : 'image-preview1' }>
         <div className='main-content'>
           <div className = 'origin'>
              <p className = 'name-fix'>Origin Image</p>
