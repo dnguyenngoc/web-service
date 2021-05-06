@@ -21,7 +21,7 @@ import ImagePreview from './ImagePreview.js'
 import '../styles/container.scss'
 
 
-const API_SERVER = 'http://161.117.87.31:8081/api'
+const API_SERVER = 'http://10.1.33.76:8081/api'
 
 
 function getCurrentDate(separator='-'){
