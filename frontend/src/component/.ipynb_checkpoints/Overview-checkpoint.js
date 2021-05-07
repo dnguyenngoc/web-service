@@ -134,10 +134,10 @@ class Overview extends Component {
     }
     
     async handleClick(type, date = this.state.day) {
-       if (type === 'identity_card') {
+       if (type === 'identity-card') {
             const dataId = new FormData()
-            dataId.append('type_name', 'identity_card');
-            dataId.append('status_name', 'export');
+            dataId.append('type_id', 1);
+            dataId.append('status_id', 2);
             dataId.append('day', this.state.day);
             const requestOptions = { method: 'POST', body: dataId}
             await fetch(API_SERVER + '/v1/worflow-v1/preview', requestOptions)
@@ -154,8 +154,8 @@ class Overview extends Component {
             });
         } else if (type === 'discharge_record'){
             const dataId = new FormData()
-            dataId.append('type_name', type);
-            dataId.append('status_name', 'export');
+            dataId.append('type_id', 2);
+            dataId.append('status_id', 2);
             dataId.append('day', this.state.day);
             await fetch(API_SERVER + '/v1/worflow-v1/preview', { method: 'POST', body: dataId})
                 .then(response => response.json())
@@ -182,8 +182,8 @@ class Overview extends Component {
                      onClick={() => this.handleClick('full_workflow')}
                      className='overview__content__field margin__top__40' >Full Workflow
                   </a>
-                  <a className='overview__content__field' onClick={() => this.handleClick('identity_card')}>Identity Card</a>
-                  <a className='overview__content__field' onClick={() => this.handleClick('discharge_record')}>Discharge Record</a>
+                  <a className='overview__content__field' onClick={() => this.handleClick('identity-card')}>Identity Card</a>
+                  <a className='overview__content__field' onClick={() => this.handleClick('discharge-record')}>Discharge Record</a>
                 </div>
               </div>
             {

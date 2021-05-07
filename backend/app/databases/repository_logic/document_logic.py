@@ -20,6 +20,9 @@ def count_all_type_and_status(db_session: Session, type_id: int, status_id: int)
 def get_all_type_and_status(db_session: Session, type_id: int, status_id: int, page: int, limit: int) -> Document:
     return db_session.query(Document) \
                             .filter(Document.type_id==type_id, Document.status_id==status_id) \
+#                             .options(joinedload('status')) \
+                            .options(joinedload('document_split')) \
+#                             .options(joinedload('type')) \
                             .order_by(Document.update_date.desc()) \
                             .offset(limit*(page-1)) \
                             .limit(limit) \

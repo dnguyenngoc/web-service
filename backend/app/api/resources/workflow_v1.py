@@ -16,6 +16,7 @@ from fastapi import UploadFile
 
 from helpers.ftp_utils import FTP
 from helpers import time_utils
+from io import BytesIO
 
 
 router = APIRouter()
@@ -84,12 +85,14 @@ def get_image_ftp(
         raise HTTPException(status_code=400, detail="wrong status name of doc")
     if type_doc not in ['identity-card', 'discharge-record']:
         raise HTTPException(status_code=400, detail="wrong type of doc")
-        
     ftp = FTP(config.FTP_URL, config.FTP_USERNAME, config.FTP_PASSWORD)
     ftp.connect()
-    image = ftp.read(type_doc + '/' + status_name + '/' + date + '/' + name)
+    try:
+        image = ftp.read(type_doc + '/' + status_name + '/' + date + '/' + name)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="ftp error: " + str(e))
     ftp.close()
-    return StreamingResponse(image, media_type="video/mp4")
+    return StreamingResponse(BytesIO(image), media_type="image/png")
     
 
 @router.post("/preview")

@@ -14,6 +14,7 @@ class DocumentSplitBase(BaseModel):
     type_id: Optional[int]
     url: Optional[str]
     document_id: Optional[int]
+    field_id: Optional[int]
     create_date: Optional[datetime]
     update_date: Optional[datetime] = None
     class Config:
@@ -31,4 +32,5 @@ class DocumentSplitCreate(BaseModel):
     type_id: Optional[int]
     url: Optional[str]
     document_id: Optional[int]
+    field_id: Optional[int]
     create_date: Optional[datetime]
