@@ -80,10 +80,16 @@ def get_image_ftp(
     type_file = name.split('.')[-1]
     if type_file.lower() not in ['jpg','jpeg','png']:
          raise HTTPException(status_code=400, detail="File type Not Allow")
+    if status_name not in ['import', 'export', 'bad']:
+        raise HTTPException(status_code=400, detail="wrong status name of doc")
+    if type_doc not in ['identity-card', 'discharge-record']:
+        raise HTTPException(status_code=400, detail="wrong type of doc")
+        
     ftp = FTP(config.FTP_URL, config.FTP_USERNAME, config.FTP_PASSWORD)
     ftp.connect()
-#         chdir(type_doc + '/' + '')
+    image = ftp.read(type_doc + '/' + status_name + '/' + date + '/' + name)
     ftp.close()
+    return StreamingResponse(image, media_type="video/mp4")
     
 
 @router.post("/preview")

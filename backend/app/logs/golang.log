@@ -2886,3 +2886,11 @@ TypeError: string_to_datetime() missing 1 required positional argument: 'format'
 2021-05-07 12:09:45,384 - INFO - Waiting for application shutdown.
 2021-05-07 12:09:45,384 - INFO - Application shutdown complete.
 2021-05-07 12:09:45,384 - INFO - Finished server process [2158]
+2021-05-07 12:39:14,078 - INFO - Started server process [2393]
+2021-05-07 12:39:14,078 - INFO - Waiting for application startup.
+2021-05-07 12:39:14,078 - INFO - Application startup complete.
+2021-05-07 12:39:14,079 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-07 12:39:35,631 - INFO - Shutting down
+2021-05-07 12:39:35,732 - INFO - Waiting for application shutdown.
+2021-05-07 12:39:35,732 - INFO - Application shutdown complete.
+2021-05-07 12:39:35,732 - INFO - Finished server process [2393]
