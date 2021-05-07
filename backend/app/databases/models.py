@@ -20,6 +20,15 @@ class DocumentType(Base):
     description = Column(String, nullable=True)
     create_date = Column(DateTime, nullable=False)
     update_date = Column(DateTime, nullable=True, default=None)
+
+    
+class DocumentField(Base):
+    __tablename__ = "document_field"
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, nullable=False)
+    description = Column(String, nullable=True)
+    create_date = Column(DateTime, nullable=False)
+    update_date = Column(DateTime, nullable=True, default=None)
     
     
 class Document(Base):
@@ -37,7 +46,7 @@ class Document(Base):
     status = relationship('Status', lazy = 'noload', foreign_keys=[status_id])
     document_split = relationship("DocumentSplit", lazy='noload', back_populates="document")
 
-    
+
 class DocumentSplit(Base):
     __tablename__ = "document_split"
     id = Column(Integer, primary_key=True, index=True)
@@ -49,20 +58,12 @@ class DocumentSplit(Base):
     update_date = Column(DateTime, nullable=True, default=None)
     type_id = Column(Integer,ForeignKey('document_type.id'), nullable=False)
     document_id = Column(Integer, ForeignKey("document.id"), nullable=False)
-    field_id = Column(Integer, ForeigKey('document_field.id'), nullable = False)
+    field_id = Column(Integer, ForeignKey('document_field.id'), nullable = False)
     field = relationship('DocumentField', lazy = 'noload', foreign_keys=[field_id])
     type = relationship('DocumentType', lazy = 'noload', foreign_keys=[type_id])
-    document = relationship('Document', lazy='noload', uselist=False, back_populates="document_split")
+    document = relationship('Document', lazy = 'noload', uselist=False, back_populates="document_split")
     
-class DocumentField(Base):
-     __tablename__ = "document_field"
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False)
-    description = Column(String, nullable=True)
-    create_date = Column(DateTime, nullable=False)
-    update_date = Column(DateTime, nullable=True, default=None)
-    
-    
+
 class DocumentTransForm(Base):
     __tablename__ = "document_transform"
     id = Column(Integer, primary_key=True, index=True)

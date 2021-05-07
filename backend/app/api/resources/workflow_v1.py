@@ -105,7 +105,7 @@ def get_identity_card_by_day(
 ):
     if time_utils.is_string_time(day, '%Y-%m-%d') == False:
         raise HTTPException(status_code=400, detail="day is string yyyy-mm-dd") 
-    data = document_logic.get_all_type_and_status(db_session, type_id, status_id, page = 1, limit = 100)
+    data = document_logic.get_all_type_and_status_join_split_and_field(db_session, type_id, status_id, page = 1, limit = 100)
     return data
    
     

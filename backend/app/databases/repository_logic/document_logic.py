@@ -17,12 +17,11 @@ def count_all_status(db_session: Session, status_id: int) -> Document:
 def count_all_type_and_status(db_session: Session, type_id: int, status_id: int) -> Document:
     return db_session.query(Document).filter(Document.type_id==type_id, Document.status_id==status_id).count()
 
-def get_all_type_and_status(db_session: Session, type_id: int, status_id: int, page: int, limit: int) -> Document:
+def get_all_type_and_status_join_split_and_field(db_session: Session, type_id: int, status_id: int, page: int, limit: int) -> Document:
     return db_session.query(Document) \
                             .filter(Document.type_id==type_id, Document.status_id==status_id) \
-#                             .options(joinedload('status')) \
                             .options(joinedload('document_split')) \
-#                             .options(joinedload('type')) \
+                            .options(joinedload('document_field')) \
                             .order_by(Document.update_date.desc()) \
                             .offset(limit*(page-1)) \
                             .limit(limit) \
