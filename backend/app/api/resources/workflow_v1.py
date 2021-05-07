@@ -52,6 +52,7 @@ def upload_image_ftp(
         ftp.upload_byte_image(byte_image, path + '/' + name_document)
     except Exception as e:
         raise HTTPException(status_code=500, detail="ftp error: " + str(e))
+    ftp.close()
     url = 'http://{host}:{port}/api/v1/worflow-v1/image/{type_doc}/{status_name}/{string_date}/{name}' \
         .format(host = config.BE_HOST, port = config.BE_PORT, type_doc = type_doc, status_name = status_name, string_date = string_date, name = name_document)
     data = document_entity.DocumentCreate(
@@ -61,8 +62,8 @@ def upload_image_ftp(
         status_id= 1,
         create_date= time_utils.utc_now()
     )
-    document_crud.create()
-    ftp.close()
+    end = document_crud.create(db_session, data)
+    return end
     
 
     
