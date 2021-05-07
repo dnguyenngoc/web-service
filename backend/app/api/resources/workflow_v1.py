@@ -53,7 +53,7 @@ def upload_image_ftp(
     except Exception as e:
         raise HTTPException(status_code=500, detail="ftp error: " + str(e))
     url = 'http://{host}:{port}/api/v1/worflow-v1/image/{type_doc}/{status_name}/{string_date}/{name}' \
-        .format(host = config.BE_HOST, port = config.BE_PORT, type_doc = type_doc, status_name = status_name, string_date = string_date, name = name)
+        .format(host = config.BE_HOST, port = config.BE_PORT, type_doc = type_doc, status_name = status_name, string_date = string_date, name = name_document)
     data = DocumentCreate(
         name = name_document,
         type_id = 1,
