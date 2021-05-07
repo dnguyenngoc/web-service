@@ -2,7 +2,7 @@ import os
 
 # PROJECT INFO
 PROJECT_NAME = 'Web Service'
-ENVIROMENT = os.getenv('ENVIRONMENT')
+ENVIRONMENT = os.getenv('ENVIRONMENT')
 HOST_NAME = 'www.digi-scan.vn'
 
 BE_PORT = 8081
