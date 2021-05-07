@@ -20,7 +20,7 @@ if ENVIRONMENT == 'staging':
 elif ENVIRONMENT == 'production':
     SQLALCHEMY_DATABASE_URL = "postgresql://webscan:1q2w3e4r@192.168.15.18:5432/webscan"
     FTP_USERNAME = 'upload'
-    FTP_PASSWORD = 'raspbery'
+    FTP_PASSWORD = 'raspberry'
     FTP_URL = '192.168.15.17'
     FTP_PORT = 21
     BE_HOST = '10.1.33.76'
