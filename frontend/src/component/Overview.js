@@ -140,7 +140,7 @@ class Overview extends Component {
             dataId.append('status_name', 'export');
             dataId.append('day', this.state.day);
             const requestOptions = { method: 'POST', body: dataId}
-            await fetch(API_SERVER + '/v1/worflow-v1/preview/identity-card', requestOptions)
+            await fetch(API_SERVER + '/v1/worflow-v1/preview', requestOptions)
                 .then(response => response.json())
                 .then(data => {
                     this.setState({identityCard: {data: data, len: data.length}})
@@ -157,7 +157,7 @@ class Overview extends Component {
             dataId.append('type_name', type);
             dataId.append('status_name', 'export');
             dataId.append('day', this.state.day);
-            await fetch(API_SERVER + '/v1/worflow-v1/preview/identity-card', { method: 'POST', body: dataId})
+            await fetch(API_SERVER + '/v1/worflow-v1/preview', { method: 'POST', body: dataId})
                 .then(response => response.json())
                 .then(data => {
                     this.setState({dischargeRecord: {data: data, len: data.length}})

@@ -9,7 +9,7 @@ BE_PORT = 8081
 FE_PORT = 8080
 
 
-if ENVIROMENT == 'staging':
+if ENVIRONMENT == 'staging':
     SQLALCHEMY_DATABASE_URL = "postgresql://webscan:1q2w3e4r@161.117.87.31:5432/webscan"
     FTP_USERNAME = 'pot'
     FTP_PASSWORD = 'D@123123'
