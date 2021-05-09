@@ -1,0 +1,11 @@
+[Unit]
+Description= WebService                     
+
+[Service]
+User=pot             
+WorkingDirectory=/home/pot/project/web-service   
+ExecStart=bash start_backend.sh              
+Restart=always
+Environment=ENVIRONMENT=staging
+
+[Install]

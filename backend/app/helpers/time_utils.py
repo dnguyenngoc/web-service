@@ -10,7 +10,7 @@ def is_string_time(value, format = '%Y-%m-%d'):
 
     
 def string_to_datetime(value, format):
-    return datetime.strptime(value, format)
+    return datetime.datetime.strptime(value, format)
 
 
 def utc_now_string():

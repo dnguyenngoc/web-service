@@ -1,0 +1,1517 @@
+2021-05-08 00:16:38,755 - INFO - Started server process [5093]
+2021-05-08 00:16:38,755 - INFO - Waiting for application startup.
+2021-05-08 00:16:38,756 - INFO - Application startup complete.
+2021-05-08 00:16:38,756 - ERROR - [Errno 98] error while attempting to bind on address ('0.0.0.0', 8081): address already in use
+2021-05-08 00:16:38,756 - INFO - Waiting for application shutdown.
+2021-05-08 00:16:38,757 - INFO - Application shutdown complete.
+2021-05-08 00:17:31,617 - INFO - Started server process [5109]
+2021-05-08 00:17:31,618 - INFO - Waiting for application startup.
+2021-05-08 00:17:31,618 - INFO - Application startup complete.
+2021-05-08 00:17:31,619 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 08:07:32,154 - WARNING - Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 172, in handle_events
+    event = self.conn.next_event()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
+2021-05-08 10:26:15,533 - INFO - Shutting down
+2021-05-08 10:26:15,634 - INFO - Waiting for application shutdown.
+2021-05-08 10:26:15,634 - INFO - Application shutdown complete.
+2021-05-08 10:26:15,634 - INFO - Finished server process [5109]
+2021-05-08 10:26:19,012 - INFO - Started server process [7818]
+2021-05-08 10:26:19,012 - INFO - Waiting for application startup.
+2021-05-08 10:26:19,013 - INFO - Application startup complete.
+2021-05-08 10:26:19,013 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 10:27:09,289 - INFO - Shutting down
+2021-05-08 10:27:09,390 - INFO - Waiting for application shutdown.
+2021-05-08 10:27:09,390 - INFO - Application shutdown complete.
+2021-05-08 10:27:09,390 - INFO - Finished server process [7818]
+2021-05-08 11:06:57,313 - INFO - Started server process [9159]
+2021-05-08 11:06:57,314 - INFO - Waiting for application startup.
+2021-05-08 11:06:57,314 - INFO - Application startup complete.
+2021-05-08 11:06:57,314 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:07:31,925 - INFO - Shutting down
+2021-05-08 11:07:32,025 - INFO - Waiting for application shutdown.
+2021-05-08 11:07:32,026 - INFO - Application shutdown complete.
+2021-05-08 11:07:32,026 - INFO - Finished server process [9159]
+2021-05-08 11:07:32,647 - INFO - Started server process [9173]
+2021-05-08 11:07:32,647 - INFO - Waiting for application startup.
+2021-05-08 11:07:32,647 - INFO - Application startup complete.
+2021-05-08 11:07:32,648 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:07:35,758 - INFO - Shutting down
+2021-05-08 11:07:35,859 - INFO - Waiting for application shutdown.
+2021-05-08 11:07:35,859 - INFO - Application shutdown complete.
+2021-05-08 11:07:35,860 - INFO - Finished server process [9173]
+2021-05-08 11:07:36,409 - INFO - Started server process [9214]
+2021-05-08 11:07:36,409 - INFO - Waiting for application startup.
+2021-05-08 11:07:36,409 - INFO - Application startup complete.
+2021-05-08 11:07:36,410 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:17:55,594 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 44, in upload_image_ftp
+    ftp.upload_byte_image(byte_image, path + '/' + name_document)
+  File "/home/pot/project/web-service/backend/app/helpers/ftp_utils.py", line 40, in upload_byte_image
+    self.sess.storbinary('STOR ./{path}'.format(path=path), temp)
+  File "/opt/anaconda3/lib/python3.8/ftplib.py", line 487, in storbinary
+    with self.transfercmd(cmd, rest) as conn:
+  File "/opt/anaconda3/lib/python3.8/ftplib.py", line 382, in transfercmd
+    return self.ntransfercmd(cmd, rest)[0]
+  File "/opt/anaconda3/lib/python3.8/ftplib.py", line 348, in ntransfercmd
+    resp = self.sendcmd(cmd)
+  File "/opt/anaconda3/lib/python3.8/ftplib.py", line 275, in sendcmd
+    return self.getresp()
+  File "/opt/anaconda3/lib/python3.8/ftplib.py", line 246, in getresp
+    raise error_temp(resp)
+ftplib.error_temp: 425 Security: Bad IP connecting.
+2021-05-08 11:19:46,493 - INFO - BEGIN (implicit)
+2021-05-08 11:19:46,495 - INFO - INSERT INTO document (name, url, export_date, create_date, update_date, type_id, status_id) VALUES (%(name)s, %(url)s, %(export_date)s, %(create_date)s, %(update_date)s, %(type_id)s, %(status_id)s) RETURNING document.id
+2021-05-08 11:19:46,495 - INFO - [generated in 0.00032s] {'name': '2021-05-08 03:19:46.417862.png', 'url': 'http://161.117.87.31:8081/api/v1/worflow-v1/image/identity-card/import/2021-05-08/2021-05-08 03:19:46.417862.png', 'export_date': None, 'create_date': datetime.datetime(2021, 5, 8, 3, 19, 46, 479271), 'update_date': None, 'type_id': 1, 'status_id': 1}
+2021-05-08 11:19:46,497 - INFO - ROLLBACK
+2021-05-08 11:19:46,499 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 55, in upload_image_ftp
+    end = document_crud.create(db_session, data)
+  File "/home/pot/project/web-service/backend/app/databases/repository_crud/document_crud.py", line 11, in create
+    db_session.commit()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 826, in commit
+    self._prepare_impl()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 805, in _prepare_impl
+    self.session.flush()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3260, in flush
+    self._flush(objects)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3400, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3360, in _flush
+    flush_context.execute()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 627, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 242, in save_obj
+    _emit_insert_statements(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1219, in _emit_insert_statements
+    result = connection._execute_20(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1578, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 320, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1447, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1806, in _execute_context
+    self._handle_dbapi_exception(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1987, in _handle_dbapi_exception
+    util.raise_(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1763, in _execute_context
+    self.dialect.do_execute(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) insert or update on table "document" violates foreign key constraint "document_type_id_fkey"
+DETAIL:  Key (type_id)=(1) is not present in table "document_type".
+
+[SQL: INSERT INTO document (name, url, export_date, create_date, update_date, type_id, status_id) VALUES (%(name)s, %(url)s, %(export_date)s, %(create_date)s, %(update_date)s, %(type_id)s, %(status_id)s) RETURNING document.id]
+[parameters: {'name': '2021-05-08 03:19:46.417862.png', 'url': 'http://161.117.87.31:8081/api/v1/worflow-v1/image/identity-card/import/2021-05-08/2021-05-08 03:19:46.417862.png', 'export_date': None, 'create_date': datetime.datetime(2021, 5, 8, 3, 19, 46, 479271), 'update_date': None, 'type_id': 1, 'status_id': 1}]
+(Background on this error at: http://sqlalche.me/e/14/gkpj)
+2021-05-08 11:28:40,973 - INFO - Shutting down
+2021-05-08 11:28:41,074 - INFO - Waiting for application shutdown.
+2021-05-08 11:28:41,074 - INFO - Application shutdown complete.
+2021-05-08 11:28:41,075 - INFO - Finished server process [9214]
+2021-05-08 11:28:41,881 - INFO - Started server process [9412]
+2021-05-08 11:28:41,882 - INFO - Waiting for application startup.
+2021-05-08 11:28:41,882 - INFO - Application startup complete.
+2021-05-08 11:28:41,883 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:33:32,941 - INFO - Shutting down
+2021-05-08 11:33:33,042 - INFO - Waiting for application shutdown.
+2021-05-08 11:33:33,042 - INFO - Application shutdown complete.
+2021-05-08 11:33:33,042 - INFO - Finished server process [9412]
+2021-05-08 11:33:33,659 - INFO - Started server process [9444]
+2021-05-08 11:33:33,659 - INFO - Waiting for application startup.
+2021-05-08 11:33:33,660 - INFO - Application startup complete.
+2021-05-08 11:33:33,660 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:34:21,414 - INFO - Shutting down
+2021-05-08 11:34:21,515 - INFO - Waiting for application shutdown.
+2021-05-08 11:34:21,515 - INFO - Application shutdown complete.
+2021-05-08 11:34:21,515 - INFO - Finished server process [9444]
+2021-05-08 11:34:22,227 - INFO - Started server process [9453]
+2021-05-08 11:34:22,227 - INFO - Waiting for application startup.
+2021-05-08 11:34:22,227 - INFO - Application startup complete.
+2021-05-08 11:34:22,228 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:37:05,461 - INFO - BEGIN (implicit)
+2021-05-08 11:37:05,462 - INFO - INSERT INTO document (name, url, export_date, create_date, update_date, type_id, status_id) VALUES (%(name)s, %(url)s, %(export_date)s, %(create_date)s, %(update_date)s, %(type_id)s, %(status_id)s) RETURNING document.id
+2021-05-08 11:37:05,462 - INFO - [generated in 0.00028s] {'name': '2021-05-08 03:37:05.385508.png', 'url': 'http://161.117.87.31:8081/api/v1/worflow-v1/image/identity-card/import/2021-05-08/2021-05-08 03:37:05.385508.png', 'export_date': None, 'create_date': datetime.datetime(2021, 5, 8, 3, 37, 5, 446907), 'update_date': None, 'type_id': 1, 'status_id': 1}
+2021-05-08 11:37:05,465 - INFO - COMMIT
+2021-05-08 11:37:05,469 - INFO - BEGIN (implicit)
+2021-05-08 11:37:05,472 - INFO - SELECT document.id, document.name, document.url, document.export_date, document.create_date, document.update_date, document.type_id, document.status_id 
+FROM document 
+WHERE document.id = %(pk_1)s
+2021-05-08 11:37:05,472 - INFO - [generated in 0.00031s] {'pk_1': 1}
+2021-05-08 11:37:05,475 - INFO - ROLLBACK
+2021-05-08 11:37:16,016 - INFO - BEGIN (implicit)
+2021-05-08 11:37:16,016 - INFO - INSERT INTO document (name, url, export_date, create_date, update_date, type_id, status_id) VALUES (%(name)s, %(url)s, %(export_date)s, %(create_date)s, %(update_date)s, %(type_id)s, %(status_id)s) RETURNING document.id
+2021-05-08 11:37:16,016 - INFO - [cached since 10.55s ago] {'name': '2021-05-08 03:37:15.952596.png', 'url': 'http://161.117.87.31:8081/api/v1/worflow-v1/image/identity-card/import/2021-05-08/2021-05-08 03:37:15.952596.png', 'export_date': None, 'create_date': datetime.datetime(2021, 5, 8, 3, 37, 16, 14634), 'update_date': None, 'type_id': 1, 'status_id': 1}
+2021-05-08 11:37:16,018 - INFO - COMMIT
+2021-05-08 11:37:16,023 - INFO - BEGIN (implicit)
+2021-05-08 11:37:16,024 - INFO - SELECT document.id, document.name, document.url, document.export_date, document.create_date, document.update_date, document.type_id, document.status_id 
+FROM document 
+WHERE document.id = %(pk_1)s
+2021-05-08 11:37:16,024 - INFO - [cached since 10.55s ago] {'pk_1': 2}
+2021-05-08 11:37:16,026 - INFO - ROLLBACK
+2021-05-08 11:37:20,911 - INFO - BEGIN (implicit)
+2021-05-08 11:37:20,911 - INFO - INSERT INTO document (name, url, export_date, create_date, update_date, type_id, status_id) VALUES (%(name)s, %(url)s, %(export_date)s, %(create_date)s, %(update_date)s, %(type_id)s, %(status_id)s) RETURNING document.id
+2021-05-08 11:37:20,912 - INFO - [cached since 15.45s ago] {'name': '2021-05-08 03:37:20.798365.png', 'url': 'http://161.117.87.31:8081/api/v1/worflow-v1/image/identity-card/import/2021-05-08/2021-05-08 03:37:20.798365.png', 'export_date': None, 'create_date': datetime.datetime(2021, 5, 8, 3, 37, 20, 909906), 'update_date': None, 'type_id': 1, 'status_id': 1}
+2021-05-08 11:37:20,913 - INFO - COMMIT
+2021-05-08 11:37:20,917 - INFO - BEGIN (implicit)
+2021-05-08 11:37:20,917 - INFO - SELECT document.id, document.name, document.url, document.export_date, document.create_date, document.update_date, document.type_id, document.status_id 
+FROM document 
+WHERE document.id = %(pk_1)s
+2021-05-08 11:37:20,918 - INFO - [cached since 15.45s ago] {'pk_1': 3}
+2021-05-08 11:37:20,920 - INFO - ROLLBACK
+2021-05-08 11:37:25,033 - INFO - BEGIN (implicit)
+2021-05-08 11:37:25,033 - INFO - INSERT INTO document (name, url, export_date, create_date, update_date, type_id, status_id) VALUES (%(name)s, %(url)s, %(export_date)s, %(create_date)s, %(update_date)s, %(type_id)s, %(status_id)s) RETURNING document.id
+2021-05-08 11:37:25,033 - INFO - [cached since 19.57s ago] {'name': '2021-05-08 03:37:24.970299.png', 'url': 'http://161.117.87.31:8081/api/v1/worflow-v1/image/identity-card/import/2021-05-08/2021-05-08 03:37:24.970299.png', 'export_date': None, 'create_date': datetime.datetime(2021, 5, 8, 3, 37, 25, 31439), 'update_date': None, 'type_id': 1, 'status_id': 1}
+2021-05-08 11:37:25,035 - INFO - COMMIT
+2021-05-08 11:37:25,039 - INFO - BEGIN (implicit)
+2021-05-08 11:37:25,039 - INFO - SELECT document.id, document.name, document.url, document.export_date, document.create_date, document.update_date, document.type_id, document.status_id 
+FROM document 
+WHERE document.id = %(pk_1)s
+2021-05-08 11:37:25,039 - INFO - [cached since 19.57s ago] {'pk_1': 4}
+2021-05-08 11:37:25,042 - INFO - ROLLBACK
+2021-05-08 11:37:29,267 - INFO - BEGIN (implicit)
+2021-05-08 11:37:29,268 - INFO - INSERT INTO document (name, url, export_date, create_date, update_date, type_id, status_id) VALUES (%(name)s, %(url)s, %(export_date)s, %(create_date)s, %(update_date)s, %(type_id)s, %(status_id)s) RETURNING document.id
+2021-05-08 11:37:29,268 - INFO - [cached since 23.81s ago] {'name': '2021-05-08 03:37:29.158002.png', 'url': 'http://161.117.87.31:8081/api/v1/worflow-v1/image/identity-card/import/2021-05-08/2021-05-08 03:37:29.158002.png', 'export_date': None, 'create_date': datetime.datetime(2021, 5, 8, 3, 37, 29, 265995), 'update_date': None, 'type_id': 1, 'status_id': 1}
+2021-05-08 11:37:29,270 - INFO - COMMIT
+2021-05-08 11:37:29,272 - INFO - BEGIN (implicit)
+2021-05-08 11:37:29,273 - INFO - SELECT document.id, document.name, document.url, document.export_date, document.create_date, document.update_date, document.type_id, document.status_id 
+FROM document 
+WHERE document.id = %(pk_1)s
+2021-05-08 11:37:29,273 - INFO - [cached since 23.8s ago] {'pk_1': 5}
+2021-05-08 11:37:29,275 - INFO - ROLLBACK
+2021-05-08 11:42:15,096 - INFO - BEGIN (implicit)
+2021-05-08 11:42:15,098 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 86, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 142, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 87, in get_identity_card_by_day
+    data = document_logic.get_all_type_and_status_join_split_and_field(db_session, type_id, status_id, page = 1, limit = 100)
+  File "/home/pot/project/web-service/backend/app/databases/repository_logic/document_logic.py", line 21, in get_all_type_and_status_join_split_and_field
+    return db_session.query(Document) \
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2699, in all
+    return self._iter().all()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2834, in _iter
+    result = self.session.execute(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1675, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1578, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 320, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1439, in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 542, in _compile_w_cache
+    compiled_sql = self._compiler(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 577, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 766, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 455, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 490, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/visitors.py", line 81, in _compiler_dispatch
+    return meth(self, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 3019, in visit_select
+    compile_state = select_stmt._compile_state_factory(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/base.py", line 502, in create_for_statement
+    return klass.create_for_statement(statement, compiler, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/context.py", line 579, in create_for_statement
+    opt.process_compile_state(self)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 185, in process_compile_state
+    self._process(compile_state, not bool(compile_state.current_path))
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 711, in _process
+    val._bind_loader(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 895, in _bind_loader
+    if not loader._generate_path(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 257, in _generate_path
+    util.raise_(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.exc.ArgumentError: Can't find property named "document_field" on mapped class Document->document in this Query.
+2021-05-08 11:42:22,078 - INFO - Shutting down
+2021-05-08 11:42:22,178 - INFO - Waiting for application shutdown.
+2021-05-08 11:42:22,179 - INFO - Application shutdown complete.
+2021-05-08 11:42:22,179 - INFO - Finished server process [9453]
+2021-05-08 11:42:22,808 - INFO - Started server process [9538]
+2021-05-08 11:42:22,808 - INFO - Waiting for application startup.
+2021-05-08 11:42:22,808 - INFO - Application startup complete.
+2021-05-08 11:42:22,809 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:42:34,360 - INFO - BEGIN (implicit)
+2021-05-08 11:42:34,363 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 86, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 142, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 87, in get_identity_card_by_day
+    data = document_logic.get_all_type_and_status_join_split_and_field(db_session, type_id, status_id, page = 1, limit = 100)
+  File "/home/pot/project/web-service/backend/app/databases/repository_logic/document_logic.py", line 21, in get_all_type_and_status_join_split_and_field
+    return db_session.query(Document) \
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2699, in all
+    return self._iter().all()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2834, in _iter
+    result = self.session.execute(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1675, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1578, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 320, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1439, in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 542, in _compile_w_cache
+    compiled_sql = self._compiler(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 577, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 766, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 455, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 490, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/visitors.py", line 81, in _compiler_dispatch
+    return meth(self, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 3019, in visit_select
+    compile_state = select_stmt._compile_state_factory(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/base.py", line 502, in create_for_statement
+    return klass.create_for_statement(statement, compiler, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/context.py", line 579, in create_for_statement
+    opt.process_compile_state(self)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 185, in process_compile_state
+    self._process(compile_state, not bool(compile_state.current_path))
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 711, in _process
+    val._bind_loader(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 895, in _bind_loader
+    if not loader._generate_path(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 257, in _generate_path
+    util.raise_(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.exc.ArgumentError: Can't find property named "document_field" on mapped class Document->document in this Query.
+2021-05-08 11:43:26,407 - INFO - BEGIN (implicit)
+2021-05-08 11:43:26,415 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:43:26,415 - INFO - [generated in 0.00032s] {'status_id_1': 1}
+2021-05-08 11:43:26,421 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:43:26,422 - INFO - [generated in 0.00038s] {'type_id_1': 1, 'status_id_1': 1}
+2021-05-08 11:43:26,424 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:43:26,424 - INFO - [cached since 0.002699s ago] {'type_id_1': 1, 'status_id_1': 5}
+2021-05-08 11:43:26,426 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:43:26,426 - INFO - [cached since 0.004833s ago] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-08 11:43:26,428 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:43:26,428 - INFO - [cached since 0.006832s ago] {'type_id_1': 2, 'status_id_1': 5}
+2021-05-08 11:43:26,430 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:43:26,430 - INFO - [cached since 0.008754s ago] {'type_id_1': 1, 'status_id_1': 2}
+2021-05-08 11:43:26,432 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:43:26,432 - INFO - [cached since 0.01068s ago] {'type_id_1': 2, 'status_id_1': 2}
+2021-05-08 11:43:26,434 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:43:26,434 - INFO - [cached since 0.01258s ago] {'type_id_1': 1, 'status_id_1': 3}
+2021-05-08 11:43:26,435 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:43:26,436 - INFO - [cached since 0.01444s ago] {'type_id_1': 2, 'status_id_1': 3}
+2021-05-08 11:43:26,437 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:43:26,438 - INFO - [cached since 0.01629s ago] {'type_id_1': 1, 'status_id_1': 4}
+2021-05-08 11:43:26,439 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:43:26,440 - INFO - [cached since 0.01835s ago] {'type_id_1': 2, 'status_id_1': 4}
+2021-05-08 11:43:26,441 - INFO - ROLLBACK
+2021-05-08 11:43:51,607 - INFO - Shutting down
+2021-05-08 11:43:51,708 - INFO - Waiting for application shutdown.
+2021-05-08 11:43:51,708 - INFO - Application shutdown complete.
+2021-05-08 11:43:51,708 - INFO - Finished server process [9538]
+2021-05-08 11:43:52,419 - INFO - Started server process [9568]
+2021-05-08 11:43:52,420 - INFO - Waiting for application startup.
+2021-05-08 11:43:52,420 - INFO - Application startup complete.
+2021-05-08 11:43:52,421 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:44:00,474 - INFO - BEGIN (implicit)
+2021-05-08 11:44:00,479 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:44:00,479 - INFO - [generated in 0.00029s] {'status_id_1': 1}
+2021-05-08 11:44:00,484 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:44:00,484 - INFO - [generated in 0.00031s] {'type_id_1': 1, 'status_id_1': 1}
+2021-05-08 11:44:00,486 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:44:00,487 - INFO - [cached since 0.002704s ago] {'type_id_1': 1, 'status_id_1': 5}
+2021-05-08 11:44:00,489 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:44:00,489 - INFO - [cached since 0.004851s ago] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-08 11:44:00,491 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:44:00,491 - INFO - [cached since 0.006798s ago] {'type_id_1': 2, 'status_id_1': 5}
+2021-05-08 11:44:00,492 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:44:00,493 - INFO - [cached since 0.008762s ago] {'type_id_1': 1, 'status_id_1': 2}
+2021-05-08 11:44:00,494 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:44:00,494 - INFO - [cached since 0.01056s ago] {'type_id_1': 2, 'status_id_1': 2}
+2021-05-08 11:44:00,497 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:44:00,498 - INFO - [cached since 0.01372s ago] {'type_id_1': 1, 'status_id_1': 3}
+2021-05-08 11:44:00,499 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:44:00,500 - INFO - [cached since 0.0156s ago] {'type_id_1': 2, 'status_id_1': 3}
+2021-05-08 11:44:00,501 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:44:00,501 - INFO - [cached since 0.01738s ago] {'type_id_1': 1, 'status_id_1': 4}
+2021-05-08 11:44:00,503 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-08 11:44:00,503 - INFO - [cached since 0.01922s ago] {'type_id_1': 2, 'status_id_1': 4}
+2021-05-08 11:44:00,505 - INFO - ROLLBACK
+2021-05-08 11:46:05,955 - INFO - Shutting down
+2021-05-08 11:46:06,056 - INFO - Waiting for application shutdown.
+2021-05-08 11:46:06,056 - INFO - Application shutdown complete.
+2021-05-08 11:46:06,057 - INFO - Finished server process [9568]
+2021-05-08 11:46:06,650 - INFO - Started server process [9584]
+2021-05-08 11:46:06,650 - INFO - Waiting for application startup.
+2021-05-08 11:46:06,650 - INFO - Application startup complete.
+2021-05-08 11:46:06,650 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:46:22,973 - INFO - BEGIN (implicit)
+2021-05-08 11:46:22,976 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 86, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 142, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 87, in preview
+    data = document_logic.get_all_type_and_status_join_split_and_field(db_session, type_id, status_id, page = 1, limit = 100)
+  File "/home/pot/project/web-service/backend/app/databases/repository_logic/document_logic.py", line 21, in get_all_type_and_status_join_split_and_field
+    return db_session.query(Document) \
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2699, in all
+    return self._iter().all()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2834, in _iter
+    result = self.session.execute(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1675, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1578, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 320, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1439, in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 542, in _compile_w_cache
+    compiled_sql = self._compiler(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 577, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 766, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 455, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 490, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/visitors.py", line 81, in _compiler_dispatch
+    return meth(self, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 3019, in visit_select
+    compile_state = select_stmt._compile_state_factory(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/base.py", line 502, in create_for_statement
+    return klass.create_for_statement(statement, compiler, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/context.py", line 579, in create_for_statement
+    opt.process_compile_state(self)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 185, in process_compile_state
+    self._process(compile_state, not bool(compile_state.current_path))
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 711, in _process
+    val._bind_loader(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 895, in _bind_loader
+    if not loader._generate_path(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 257, in _generate_path
+    util.raise_(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.exc.ArgumentError: Can't find property named "document_field" on mapped class Document->document in this Query.
+2021-05-08 11:48:30,713 - INFO - Shutting down
+2021-05-08 11:48:30,813 - INFO - Waiting for application shutdown.
+2021-05-08 11:48:30,814 - INFO - Application shutdown complete.
+2021-05-08 11:48:30,814 - INFO - Finished server process [9584]
+2021-05-08 11:48:31,497 - INFO - Started server process [9596]
+2021-05-08 11:48:31,497 - INFO - Waiting for application startup.
+2021-05-08 11:48:31,497 - INFO - Application startup complete.
+2021-05-08 11:48:31,497 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:48:32,690 - INFO - BEGIN (implicit)
+2021-05-08 11:48:32,694 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 87, in preview
+    data = document_logic.get_all_type_and_status_join_split_and_field(db_session, type_id, status_id, page = 1, limit = 100)
+  File "/home/pot/project/web-service/backend/app/databases/repository_logic/document_logic.py", line 21, in get_all_type_and_status_join_split_and_field
+    return db_session.query(Document) \
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2699, in all
+    return self._iter().all()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2834, in _iter
+    result = self.session.execute(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1675, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1578, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 320, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1439, in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 542, in _compile_w_cache
+    compiled_sql = self._compiler(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 577, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 766, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 455, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 490, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/visitors.py", line 81, in _compiler_dispatch
+    return meth(self, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/compiler.py", line 3019, in visit_select
+    compile_state = select_stmt._compile_state_factory(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/base.py", line 502, in create_for_statement
+    return klass.create_for_statement(statement, compiler, **kw)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/context.py", line 579, in create_for_statement
+    opt.process_compile_state(self)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 185, in process_compile_state
+    self._process(compile_state, not bool(compile_state.current_path))
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 711, in _process
+    val._bind_loader(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 895, in _bind_loader
+    if not loader._generate_path(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/strategy_options.py", line 257, in _generate_path
+    util.raise_(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.exc.ArgumentError: Can't find property named "document_field" on mapped class Document->document in this Query.
+2021-05-08 11:50:05,617 - INFO - Shutting down
+2021-05-08 11:50:05,718 - INFO - Waiting for application shutdown.
+2021-05-08 11:50:05,718 - INFO - Application shutdown complete.
+2021-05-08 11:50:05,718 - INFO - Finished server process [9596]
+2021-05-08 11:50:06,367 - INFO - Started server process [9612]
+2021-05-08 11:50:06,367 - INFO - Waiting for application startup.
+2021-05-08 11:50:06,368 - INFO - Application startup complete.
+2021-05-08 11:50:06,368 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:50:11,284 - INFO - Shutting down
+2021-05-08 11:50:11,385 - INFO - Waiting for application shutdown.
+2021-05-08 11:50:11,385 - INFO - Application shutdown complete.
+2021-05-08 11:50:11,385 - INFO - Finished server process [9612]
+2021-05-08 11:50:12,006 - INFO - Started server process [9618]
+2021-05-08 11:50:12,007 - INFO - Waiting for application startup.
+2021-05-08 11:50:12,007 - INFO - Application startup complete.
+2021-05-08 11:50:12,008 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 11:50:14,679 - INFO - BEGIN (implicit)
+2021-05-08 11:50:14,688 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_split_1.id AS document_split_1_id, document_split_1.name AS document_split_1_name, document_split_1.value AS document_split_1_value, document_split_1.is_extracted AS document_split_1_is_extracted, document_split_1.url AS document_split_1_url, document_split_1.create_date AS document_split_1_create_date, document_split_1.update_date AS document_split_1_update_date, document_split_1.type_id AS document_split_1_type_id, document_split_1.document_id AS document_split_1_document_id, document_split_1.field_id AS document_split_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_split AS document_split_1 ON anon_1.document_id = document_split_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-08 11:50:14,689 - INFO - [generated in 0.00039s] {'type_id_1': 1, 'status_id_1': 1, 'param_1': 100, 'param_2': 0}
+2021-05-08 11:50:14,695 - INFO - ROLLBACK
+2021-05-08 12:06:34,609 - INFO - Shutting down
+2021-05-08 12:06:34,709 - INFO - Waiting for application shutdown.
+2021-05-08 12:06:34,710 - INFO - Application shutdown complete.
+2021-05-08 12:06:34,710 - INFO - Finished server process [9618]
+2021-05-08 12:06:35,283 - INFO - Started server process [9672]
+2021-05-08 12:06:35,284 - INFO - Waiting for application startup.
+2021-05-08 12:06:35,284 - INFO - Application startup complete.
+2021-05-08 12:06:35,285 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 12:06:48,026 - INFO - Shutting down
+2021-05-08 12:06:48,126 - INFO - Waiting for application shutdown.
+2021-05-08 12:06:48,127 - INFO - Application shutdown complete.
+2021-05-08 12:06:48,127 - INFO - Finished server process [9672]
+2021-05-08 12:06:48,747 - INFO - Started server process [9679]
+2021-05-08 12:06:48,747 - INFO - Waiting for application startup.
+2021-05-08 12:06:48,747 - INFO - Application startup complete.
+2021-05-08 12:06:48,748 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 12:16:55,308 - INFO - BEGIN (implicit)
+2021-05-08 12:16:55,310 - INFO - INSERT INTO document (name, url, export_date, create_date, update_date, type_id, status_id) VALUES (%(name)s, %(url)s, %(export_date)s, %(create_date)s, %(update_date)s, %(type_id)s, %(status_id)s) RETURNING document.id
+2021-05-08 12:16:55,311 - INFO - [generated in 0.00040s] {'name': '2021-05-08 04:16:55.214456.png', 'url': 'http://161.117.87.31:8081/api/v1/workflow/image/identity-card/import/2021-05-08/2021-05-08 04:16:55.214456.png', 'export_date': None, 'create_date': datetime.datetime(2021, 5, 8, 4, 16, 55, 287761), 'update_date': None, 'type_id': 1, 'status_id': 1}
+2021-05-08 12:16:55,313 - INFO - COMMIT
+2021-05-08 12:16:55,317 - INFO - BEGIN (implicit)
+2021-05-08 12:16:55,320 - INFO - SELECT document.id, document.name, document.url, document.export_date, document.create_date, document.update_date, document.type_id, document.status_id 
+FROM document 
+WHERE document.id = %(pk_1)s
+2021-05-08 12:16:55,320 - INFO - [generated in 0.00037s] {'pk_1': 6}
+2021-05-08 12:16:55,323 - INFO - ROLLBACK
+2021-05-08 12:17:49,768 - INFO - BEGIN (implicit)
+2021-05-08 12:17:49,768 - INFO - INSERT INTO document (name, url, export_date, create_date, update_date, type_id, status_id) VALUES (%(name)s, %(url)s, %(export_date)s, %(create_date)s, %(update_date)s, %(type_id)s, %(status_id)s) RETURNING document.id
+2021-05-08 12:17:49,768 - INFO - [cached since 54.46s ago] {'name': '2021-05-08 04:17:49.714721.png', 'url': 'http://161.117.87.31:8081/api/v1/workflow/image/identity-card/export/2021-05-08/2021-05-08 04:17:49.714721.png', 'export_date': None, 'create_date': datetime.datetime(2021, 5, 8, 4, 17, 49, 766529), 'update_date': None, 'type_id': 1, 'status_id': 1}
+2021-05-08 12:17:49,770 - INFO - COMMIT
+2021-05-08 12:17:49,773 - INFO - BEGIN (implicit)
+2021-05-08 12:17:49,773 - INFO - SELECT document.id, document.name, document.url, document.export_date, document.create_date, document.update_date, document.type_id, document.status_id 
+FROM document 
+WHERE document.id = %(pk_1)s
+2021-05-08 12:17:49,774 - INFO - [cached since 54.45s ago] {'pk_1': 7}
+2021-05-08 12:17:49,776 - INFO - ROLLBACK
+2021-05-08 12:49:43,032 - INFO - Shutting down
+2021-05-08 12:49:43,133 - INFO - Waiting for application shutdown.
+2021-05-08 12:49:43,134 - INFO - Application shutdown complete.
+2021-05-08 12:49:43,134 - INFO - Finished server process [9679]
+2021-05-08 12:55:34,504 - INFO - Started server process [10154]
+2021-05-08 12:55:34,505 - INFO - Waiting for application startup.
+2021-05-08 12:55:34,505 - INFO - Application startup complete.
+2021-05-08 12:55:34,506 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 12:55:48,953 - INFO - Shutting down
+2021-05-08 12:55:49,054 - INFO - Waiting for application shutdown.
+2021-05-08 12:55:49,054 - INFO - Application shutdown complete.
+2021-05-08 12:55:49,054 - INFO - Finished server process [10154]
+2021-05-08 12:56:15,545 - INFO - Started server process [10194]
+2021-05-08 12:56:15,546 - INFO - Waiting for application startup.
+2021-05-08 12:56:15,546 - INFO - Application startup complete.
+2021-05-08 12:56:15,546 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 12:59:15,486 - INFO - BEGIN (implicit)
+2021-05-08 12:59:15,489 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 12:59:15,490 - INFO - [generated in 0.00031s] {'id_1': 1, 'param_1': 1}
+2021-05-08 12:59:15,494 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 12:59:15,494 - INFO - [generated in 0.00030s] {'id_1': 6, 'param_1': 1}
+2021-05-08 12:59:15,496 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 84, in upload_image_ftp_field
+    ftp.connect()
+NameError: name 'ftp' is not defined
+2021-05-08 13:00:06,609 - INFO - BEGIN (implicit)
+2021-05-08 13:00:06,610 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:00:06,610 - INFO - [cached since 51.12s ago] {'id_1': 1, 'param_1': 1}
+2021-05-08 13:00:06,612 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:00:06,613 - INFO - [cached since 51.12s ago] {'id_1': 6, 'param_1': 1}
+2021-05-08 13:00:06,615 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 84, in upload_image_ftp_field
+    ftp = FTP(config.FTP_URL, config.FTP_USERNAME, config.FTP_PASSWORD)
+NameError: name 'ftp' is not defined
+2021-05-08 13:00:12,881 - INFO - Shutting down
+2021-05-08 13:00:12,982 - INFO - Waiting for application shutdown.
+2021-05-08 13:00:12,982 - INFO - Application shutdown complete.
+2021-05-08 13:00:12,982 - INFO - Finished server process [10194]
+2021-05-08 13:00:13,711 - INFO - Started server process [10219]
+2021-05-08 13:00:13,712 - INFO - Waiting for application startup.
+2021-05-08 13:00:13,712 - INFO - Application startup complete.
+2021-05-08 13:00:13,713 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 13:00:17,224 - INFO - BEGIN (implicit)
+2021-05-08 13:00:17,226 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:00:17,226 - INFO - [generated in 0.00027s] {'id_1': 1, 'param_1': 1}
+2021-05-08 13:00:17,230 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:00:17,230 - INFO - [generated in 0.00034s] {'id_1': 6, 'param_1': 1}
+2021-05-08 13:00:17,294 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 89, in upload_image_ftp_field
+    ftp.upload_byte_image(byte_image, path + '/' + name_document)
+NameError: name 'name_document' is not defined
+2021-05-08 13:01:22,043 - INFO - Shutting down
+2021-05-08 13:01:22,143 - INFO - Waiting for application shutdown.
+2021-05-08 13:01:22,144 - INFO - Application shutdown complete.
+2021-05-08 13:01:22,144 - INFO - Finished server process [10219]
+2021-05-08 13:01:22,839 - INFO - Started server process [10244]
+2021-05-08 13:01:22,839 - INFO - Waiting for application startup.
+2021-05-08 13:01:22,840 - INFO - Application startup complete.
+2021-05-08 13:01:22,840 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 13:01:34,964 - INFO - BEGIN (implicit)
+2021-05-08 13:01:34,967 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:01:34,967 - INFO - [generated in 0.00036s] {'id_1': 1, 'param_1': 1}
+2021-05-08 13:01:34,971 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:01:34,971 - INFO - [generated in 0.00035s] {'id_1': 6, 'param_1': 1}
+2021-05-08 13:01:35,042 - INFO - ROLLBACK
+2021-05-08 13:01:35,044 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 93, in upload_image_ftp_field
+    return document_split_crud.create(
+  File "/home/pot/project/web-service/backend/app/databases/repository_crud/document_split_crud.py", line 11, in create
+    db_session.commit()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 826, in commit
+    self._prepare_impl()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 805, in _prepare_impl
+    self.session.flush()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3260, in flush
+    self._flush(objects)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3400, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3360, in _flush
+    flush_context.execute()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 627, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 242, in save_obj
+    _emit_insert_statements(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1219, in _emit_insert_statements
+    result = connection._execute_20(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1578, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 320, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1447, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1672, in _execute_context
+    self._handle_dbapi_exception(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1987, in _handle_dbapi_exception
+    util.raise_(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1666, in _execute_context
+    context = constructor(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 1073, in _init_compiled
+    param = {
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 1074, in <dictcomp>
+    key: processors[key](compiled_params[key])
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/sqltypes.py", line 1968, in process
+    value = _strict_as_bool(value)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/sqltypes.py", line 1943, in _strict_as_bool
+    raise TypeError("Not a boolean value: %r" % value)
+sqlalchemy.exc.StatementError: (builtins.TypeError) Not a boolean value: 'False'
+[SQL: INSERT INTO document_split (name, value, is_extracted, url, create_date, update_date, type_id, document_id, field_id) VALUES (%(name)s, %(value)s, %(is_extracted)s, %(url)s, %(create_date)s, %(update_date)s, %(type_id)s, %(document_id)s, %(field_id)s) RETURNING document_split.id]
+[parameters: [{'url': 'http://161.117.87.31:8081/api/v1/workflow/image/identity-card/export/2021-05-08/2021-05-08 04:16:55.214456_id.png', 'is_extracted': 'False', ... (42 characters truncated) ... tetime(2021, 5, 8, 5, 1, 35, 37883), 'document_id': 6, 'name': '2021-05-08 04:16:55.214456_id.png', 'type_id': 1, 'update_date': None, 'value': None}]]
+2021-05-08 13:02:40,298 - INFO - Shutting down
+2021-05-08 13:02:40,399 - INFO - Waiting for application shutdown.
+2021-05-08 13:02:40,400 - INFO - Application shutdown complete.
+2021-05-08 13:02:40,400 - INFO - Finished server process [10244]
+2021-05-08 13:02:41,136 - INFO - Started server process [10266]
+2021-05-08 13:02:41,137 - INFO - Waiting for application startup.
+2021-05-08 13:02:41,137 - INFO - Application startup complete.
+2021-05-08 13:02:41,137 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 13:02:47,118 - INFO - BEGIN (implicit)
+2021-05-08 13:02:47,121 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:02:47,121 - INFO - [generated in 0.00043s] {'id_1': 1, 'param_1': 1}
+2021-05-08 13:02:47,125 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:02:47,125 - INFO - [generated in 0.00035s] {'id_1': 6, 'param_1': 1}
+2021-05-08 13:02:47,195 - INFO - ROLLBACK
+2021-05-08 13:02:47,197 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 93, in upload_image_ftp_field
+    return document_split_crud.create(
+  File "/home/pot/project/web-service/backend/app/databases/repository_crud/document_split_crud.py", line 11, in create
+    db_session.commit()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 826, in commit
+    self._prepare_impl()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 805, in _prepare_impl
+    self.session.flush()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3260, in flush
+    self._flush(objects)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3400, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3360, in _flush
+    flush_context.execute()
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 627, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 242, in save_obj
+    _emit_insert_statements(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1219, in _emit_insert_statements
+    result = connection._execute_20(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1578, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 320, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1447, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1672, in _execute_context
+    self._handle_dbapi_exception(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1987, in _handle_dbapi_exception
+    util.raise_(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1666, in _execute_context
+    context = constructor(
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 1073, in _init_compiled
+    param = {
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 1074, in <dictcomp>
+    key: processors[key](compiled_params[key])
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/sqltypes.py", line 1968, in process
+    value = _strict_as_bool(value)
+  File "/opt/jupyter/lib/python3.8/site-packages/sqlalchemy/sql/sqltypes.py", line 1943, in _strict_as_bool
+    raise TypeError("Not a boolean value: %r" % value)
+sqlalchemy.exc.StatementError: (builtins.TypeError) Not a boolean value: '0'
+[SQL: INSERT INTO document_split (name, value, is_extracted, url, create_date, update_date, type_id, document_id, field_id) VALUES (%(name)s, %(value)s, %(is_extracted)s, %(url)s, %(create_date)s, %(update_date)s, %(type_id)s, %(document_id)s, %(field_id)s) RETURNING document_split.id]
+[parameters: [{'type_id': 1, 'field_id': 1, 'name': '2021-05-08 04:16:55.214456_id.png', 'document_id': 6, 'create_date': datetime.datetime(2021, 5, 8, 5, 2, 47, 1 ... (39 characters truncated) ... 81/api/v1/workflow/image/identity-card/export/2021-05-08/2021-05-08 04:16:55.214456_id.png', 'is_extracted': '0', 'value': None, 'update_date': None}]]
+2021-05-08 13:04:21,389 - INFO - Shutting down
+2021-05-08 13:04:21,490 - INFO - Waiting for application shutdown.
+2021-05-08 13:04:21,490 - INFO - Application shutdown complete.
+2021-05-08 13:04:21,490 - INFO - Finished server process [10266]
+2021-05-08 13:04:22,165 - INFO - Started server process [10291]
+2021-05-08 13:04:22,165 - INFO - Waiting for application startup.
+2021-05-08 13:04:22,165 - INFO - Application startup complete.
+2021-05-08 13:04:22,166 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 13:04:43,210 - INFO - BEGIN (implicit)
+2021-05-08 13:04:43,214 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:04:43,214 - INFO - [generated in 0.00036s] {'id_1': 1, 'param_1': 1}
+2021-05-08 13:04:43,218 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:04:43,218 - INFO - [generated in 0.00037s] {'id_1': 6, 'param_1': 1}
+2021-05-08 13:04:43,289 - INFO - INSERT INTO document_split (name, value, is_extracted, url, create_date, update_date, type_id, document_id, field_id) VALUES (%(name)s, %(value)s, %(is_extracted)s, %(url)s, %(create_date)s, %(update_date)s, %(type_id)s, %(document_id)s, %(field_id)s) RETURNING document_split.id
+2021-05-08 13:04:43,289 - INFO - [generated in 0.00039s] {'name': '2021-05-08 04:16:55.214456_id.png', 'value': None, 'is_extracted': False, 'url': 'http://161.117.87.31:8081/api/v1/workflow/image/identity-card/export/2021-05-08/2021-05-08 04:16:55.214456_id.png', 'create_date': datetime.datetime(2021, 5, 8, 5, 4, 43, 286039), 'update_date': None, 'type_id': 1, 'document_id': 6, 'field_id': 1}
+2021-05-08 13:04:43,291 - INFO - COMMIT
+2021-05-08 13:04:43,295 - INFO - BEGIN (implicit)
+2021-05-08 13:04:43,297 - INFO - SELECT document_split.id, document_split.name, document_split.value, document_split.is_extracted, document_split.url, document_split.create_date, document_split.update_date, document_split.type_id, document_split.document_id, document_split.field_id 
+FROM document_split 
+WHERE document_split.id = %(pk_1)s
+2021-05-08 13:04:43,297 - INFO - [generated in 0.00036s] {'pk_1': 1}
+2021-05-08 13:04:43,300 - INFO - ROLLBACK
+2021-05-08 13:07:14,050 - INFO - BEGIN (implicit)
+2021-05-08 13:07:14,051 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:07:14,051 - INFO - [cached since 150.8s ago] {'id_1': 1, 'param_1': 1}
+2021-05-08 13:07:14,053 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:07:14,053 - INFO - [cached since 150.8s ago] {'id_1': 6, 'param_1': 1}
+2021-05-08 13:07:14,119 - INFO - INSERT INTO document_split (name, value, is_extracted, url, create_date, update_date, type_id, document_id, field_id) VALUES (%(name)s, %(value)s, %(is_extracted)s, %(url)s, %(create_date)s, %(update_date)s, %(type_id)s, %(document_id)s, %(field_id)s) RETURNING document_split.id
+2021-05-08 13:07:14,120 - INFO - [cached since 150.8s ago] {'name': '2021-05-08 04:16:55.214456_name.png', 'value': None, 'is_extracted': False, 'url': 'http://161.117.87.31:8081/api/v1/workflow/image/identity-card/export/2021-05-08/2021-05-08 04:16:55.214456_name.png', 'create_date': datetime.datetime(2021, 5, 8, 5, 7, 14, 119062), 'update_date': None, 'type_id': 1, 'document_id': 6, 'field_id': 2}
+2021-05-08 13:07:14,121 - INFO - COMMIT
+2021-05-08 13:07:14,123 - INFO - BEGIN (implicit)
+2021-05-08 13:07:14,124 - INFO - SELECT document_split.id, document_split.name, document_split.value, document_split.is_extracted, document_split.url, document_split.create_date, document_split.update_date, document_split.type_id, document_split.document_id, document_split.field_id 
+FROM document_split 
+WHERE document_split.id = %(pk_1)s
+2021-05-08 13:07:14,124 - INFO - [cached since 150.8s ago] {'pk_1': 2}
+2021-05-08 13:07:14,126 - INFO - ROLLBACK
+2021-05-08 13:07:37,470 - INFO - BEGIN (implicit)
+2021-05-08 13:07:37,470 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:07:37,470 - INFO - [cached since 174.3s ago] {'id_1': 1, 'param_1': 1}
+2021-05-08 13:07:37,471 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:07:37,472 - INFO - [cached since 174.3s ago] {'id_1': 6, 'param_1': 1}
+2021-05-08 13:07:37,536 - INFO - INSERT INTO document_split (name, value, is_extracted, url, create_date, update_date, type_id, document_id, field_id) VALUES (%(name)s, %(value)s, %(is_extracted)s, %(url)s, %(create_date)s, %(update_date)s, %(type_id)s, %(document_id)s, %(field_id)s) RETURNING document_split.id
+2021-05-08 13:07:37,536 - INFO - [cached since 174.2s ago] {'name': '2021-05-08 04:16:55.214456_birthday.png', 'value': None, 'is_extracted': False, 'url': 'http://161.117.87.31:8081/api/v1/workflow/image/identity-card/export/2021-05-08/2021-05-08 04:16:55.214456_birthday.png', 'create_date': datetime.datetime(2021, 5, 8, 5, 7, 37, 535260), 'update_date': None, 'type_id': 1, 'document_id': 6, 'field_id': 3}
+2021-05-08 13:07:37,538 - INFO - COMMIT
+2021-05-08 13:07:37,541 - INFO - BEGIN (implicit)
+2021-05-08 13:07:37,542 - INFO - SELECT document_split.id, document_split.name, document_split.value, document_split.is_extracted, document_split.url, document_split.create_date, document_split.update_date, document_split.type_id, document_split.document_id, document_split.field_id 
+FROM document_split 
+WHERE document_split.id = %(pk_1)s
+2021-05-08 13:07:37,542 - INFO - [cached since 174.2s ago] {'pk_1': 3}
+2021-05-08 13:07:37,544 - INFO - ROLLBACK
+2021-05-08 13:07:59,852 - INFO - BEGIN (implicit)
+2021-05-08 13:07:59,853 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:07:59,853 - INFO - [cached since 196.6s ago] {'id_1': 1, 'param_1': 1}
+2021-05-08 13:07:59,854 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:07:59,855 - INFO - [cached since 196.6s ago] {'id_1': 6, 'param_1': 1}
+2021-05-08 13:07:59,921 - INFO - INSERT INTO document_split (name, value, is_extracted, url, create_date, update_date, type_id, document_id, field_id) VALUES (%(name)s, %(value)s, %(is_extracted)s, %(url)s, %(create_date)s, %(update_date)s, %(type_id)s, %(document_id)s, %(field_id)s) RETURNING document_split.id
+2021-05-08 13:07:59,921 - INFO - [cached since 196.6s ago] {'name': '2021-05-08 04:16:55.214456_home_town.png', 'value': None, 'is_extracted': False, 'url': 'http://161.117.87.31:8081/api/v1/workflow/image/identity-card/export/2021-05-08/2021-05-08 04:16:55.214456_home_town.png', 'create_date': datetime.datetime(2021, 5, 8, 5, 7, 59, 920151), 'update_date': None, 'type_id': 1, 'document_id': 6, 'field_id': 4}
+2021-05-08 13:07:59,923 - INFO - COMMIT
+2021-05-08 13:07:59,926 - INFO - BEGIN (implicit)
+2021-05-08 13:07:59,926 - INFO - SELECT document_split.id, document_split.name, document_split.value, document_split.is_extracted, document_split.url, document_split.create_date, document_split.update_date, document_split.type_id, document_split.document_id, document_split.field_id 
+FROM document_split 
+WHERE document_split.id = %(pk_1)s
+2021-05-08 13:07:59,926 - INFO - [cached since 196.6s ago] {'pk_1': 4}
+2021-05-08 13:07:59,928 - INFO - ROLLBACK
+2021-05-08 13:08:29,161 - INFO - BEGIN (implicit)
+2021-05-08 13:08:29,162 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:08:29,162 - INFO - [cached since 225.9s ago] {'id_1': 1, 'param_1': 1}
+2021-05-08 13:08:29,164 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:08:29,164 - INFO - [cached since 225.9s ago] {'id_1': 6, 'param_1': 1}
+2021-05-08 13:08:29,237 - INFO - INSERT INTO document_split (name, value, is_extracted, url, create_date, update_date, type_id, document_id, field_id) VALUES (%(name)s, %(value)s, %(is_extracted)s, %(url)s, %(create_date)s, %(update_date)s, %(type_id)s, %(document_id)s, %(field_id)s) RETURNING document_split.id
+2021-05-08 13:08:29,237 - INFO - [cached since 225.9s ago] {'name': '2021-05-08 04:16:55.214456_address.png', 'value': None, 'is_extracted': False, 'url': 'http://161.117.87.31:8081/api/v1/workflow/image/identity-card/export/2021-05-08/2021-05-08 04:16:55.214456_address.png', 'create_date': datetime.datetime(2021, 5, 8, 5, 8, 29, 236454), 'update_date': None, 'type_id': 1, 'document_id': 6, 'field_id': 5}
+2021-05-08 13:08:29,238 - INFO - COMMIT
+2021-05-08 13:08:29,245 - INFO - BEGIN (implicit)
+2021-05-08 13:08:29,246 - INFO - SELECT document_split.id, document_split.name, document_split.value, document_split.is_extracted, document_split.url, document_split.create_date, document_split.update_date, document_split.type_id, document_split.document_id, document_split.field_id 
+FROM document_split 
+WHERE document_split.id = %(pk_1)s
+2021-05-08 13:08:29,246 - INFO - [cached since 225.9s ago] {'pk_1': 5}
+2021-05-08 13:08:29,248 - INFO - ROLLBACK
+2021-05-08 13:09:08,534 - INFO - BEGIN (implicit)
+2021-05-08 13:09:08,534 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:09:08,534 - INFO - [cached since 265.3s ago] {'id_1': 1, 'param_1': 1}
+2021-05-08 13:09:08,536 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.id = %(id_1)s 
+ LIMIT %(param_1)s
+2021-05-08 13:09:08,536 - INFO - [cached since 265.3s ago] {'id_1': 6, 'param_1': 1}
+2021-05-08 13:09:08,617 - INFO - INSERT INTO document_split (name, value, is_extracted, url, create_date, update_date, type_id, document_id, field_id) VALUES (%(name)s, %(value)s, %(is_extracted)s, %(url)s, %(create_date)s, %(update_date)s, %(type_id)s, %(document_id)s, %(field_id)s) RETURNING document_split.id
+2021-05-08 13:09:08,617 - INFO - [cached since 265.3s ago] {'name': '2021-05-08 04:16:55.214456_crop_image.png', 'value': None, 'is_extracted': False, 'url': 'http://161.117.87.31:8081/api/v1/workflow/image/identity-card/export/2021-05-08/2021-05-08 04:16:55.214456_crop_image.png', 'create_date': datetime.datetime(2021, 5, 8, 5, 9, 8, 616921), 'update_date': None, 'type_id': 1, 'document_id': 6, 'field_id': 6}
+2021-05-08 13:09:08,619 - INFO - COMMIT
+2021-05-08 13:09:08,622 - INFO - BEGIN (implicit)
+2021-05-08 13:09:08,623 - INFO - SELECT document_split.id, document_split.name, document_split.value, document_split.is_extracted, document_split.url, document_split.create_date, document_split.update_date, document_split.type_id, document_split.document_id, document_split.field_id 
+FROM document_split 
+WHERE document_split.id = %(pk_1)s
+2021-05-08 13:09:08,623 - INFO - [cached since 265.3s ago] {'pk_1': 6}
+2021-05-08 13:09:08,625 - INFO - ROLLBACK
+2021-05-08 13:10:11,296 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 48, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/workflow_v1.py", line 137, in preview
+    data = document_logic.get_all_type_and_status_join_split_and_field(db_session, type_id, status_id, page = 1, limit = 100)
+  File "/home/pot/project/web-service/backend/app/helpers/time_utils.py", line 13, in string_to_datetime
+    return datetime.strptime(value, format)
+AttributeError: module 'datetime' has no attribute 'strptime'
+2021-05-08 13:17:47,603 - INFO - Shutting down
+2021-05-08 13:17:47,704 - INFO - Waiting for application shutdown.
+2021-05-08 13:17:47,705 - INFO - Application shutdown complete.
+2021-05-08 13:17:47,705 - INFO - Finished server process [10291]
+2021-05-08 13:17:48,451 - INFO - Started server process [10548]
+2021-05-08 13:17:48,452 - INFO - Waiting for application startup.
+2021-05-08 13:17:48,452 - INFO - Application startup complete.
+2021-05-08 13:17:48,453 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-08 13:18:00,553 - INFO - BEGIN (implicit)
+2021-05-08 13:18:00,559 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_split_1.id AS document_split_1_id, document_split_1.name AS document_split_1_name, document_split_1.value AS document_split_1_value, document_split_1.is_extracted AS document_split_1_is_extracted, document_split_1.url AS document_split_1_url, document_split_1.create_date AS document_split_1_create_date, document_split_1.update_date AS document_split_1_update_date, document_split_1.type_id AS document_split_1_type_id, document_split_1.document_id AS document_split_1_document_id, document_split_1.field_id AS document_split_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_split AS document_split_1 ON anon_1.document_id = document_split_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-08 13:18:00,560 - INFO - [generated in 0.00031s] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 100, 'param_2': 0}
+2021-05-08 13:18:00,563 - INFO - ROLLBACK
+2021-05-08 13:18:52,172 - INFO - BEGIN (implicit)
+2021-05-08 13:18:52,172 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_split_1.id AS document_split_1_id, document_split_1.name AS document_split_1_name, document_split_1.value AS document_split_1_value, document_split_1.is_extracted AS document_split_1_is_extracted, document_split_1.url AS document_split_1_url, document_split_1.create_date AS document_split_1_create_date, document_split_1.update_date AS document_split_1_update_date, document_split_1.type_id AS document_split_1_type_id, document_split_1.document_id AS document_split_1_document_id, document_split_1.field_id AS document_split_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_split AS document_split_1 ON anon_1.document_id = document_split_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-08 13:18:52,173 - INFO - [cached since 51.61s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 100, 'param_2': 0}
+2021-05-08 13:18:52,176 - INFO - ROLLBACK

@@ -23,8 +23,7 @@ logger.addHandler(handler)
 
 
 # Router config
-app.include_router(v1.router, prefix="/api/v1", tags=["V1"])
-
+app.include_router(v1.router, prefix="/api/v1")
 
 # Cors middleware
 origins = [

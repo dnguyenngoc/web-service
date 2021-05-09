@@ -7,7 +7,7 @@ from decimal import Decimal
 
 
 # Shared properties
-class DocumentSplitBase(BaseModel):
+class DocumentProcessBase(BaseModel):
     name: Optional[str]
     value: Optional[str] = None
     is_extracted: Optional[str] = False
@@ -21,14 +21,14 @@ class DocumentSplitBase(BaseModel):
         orm_mode = True
 
 # Data on db
-class DocumentSplitInDB(DocumentSplitBase):
+class DocumentProcessInDB(DocumentProcessBase):
     id: Optional[int]
 
-# Create DocumentSplit info
-class DocumentSplitCreate(BaseModel):
+# Create DocumentProcess info
+class DocumentProcessCreate(BaseModel):
     name: Optional[str]
     value: Optional[str] = None
-    is_extracted: Optional[str] = False
+    is_extracted: Optional[bool] = False
     type_id: Optional[int]
     url: Optional[str]
     document_id: Optional[int]

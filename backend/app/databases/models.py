@@ -25,10 +25,13 @@ class DocumentType(Base):
 class DocumentField(Base):
     __tablename__ = "document_field"
     id = Column(Integer, primary_key=True, index=True)
+    type_id = Column(Integer,ForeignKey('document_type.id'), nullable=False)
     name = Column(String, nullable=False)
     description = Column(String, nullable=True)
+    is_performance = Column(Boolean, nullable=False, default=True)
     create_date = Column(DateTime, nullable=False)
     update_date = Column(DateTime, nullable=True, default=None)
+    document_type = relationship('DocumentType', lazy = 'noload', foreign_keys=[type_id])
     
     
 class Document(Base):
@@ -36,19 +39,21 @@ class Document(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
     url = Column(String, nullable=False)
+    crop_url = Column(String, nullable=True, default= None)
     export_date = Column(DateTime, nullable=True, default=None)
+#     transform_date = Column(DateTime, nullable=True, default=None)
     create_date = Column(DateTime, nullable=False)
     update_date = Column(DateTime, nullable=True, default=None)
     type_id = Column(Integer,ForeignKey('document_type.id'), nullable=False)
     status_id = Column(Integer,ForeignKey('status.id'), nullable=False)
     
-    type = relationship('DocumentType', lazy = 'noload', foreign_keys=[type_id])
+    document_type = relationship('DocumentType', lazy = 'noload', foreign_keys=[type_id])
     status = relationship('Status', lazy = 'noload', foreign_keys=[status_id])
-    document_split = relationship("DocumentSplit", lazy='noload', back_populates="document")
+    document_process = relationship("DocumentProcess", lazy='noload', back_populates="document")
 
 
-class DocumentSplit(Base):
-    __tablename__ = "document_split"
+class DocumentProcess(Base):
+    __tablename__ = "document_process"
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
     value = Column(String, nullable=True, default=None)
@@ -61,7 +66,7 @@ class DocumentSplit(Base):
     field_id = Column(Integer, ForeignKey('document_field.id'), nullable = False)
     field = relationship('DocumentField', lazy = 'noload', foreign_keys=[field_id])
     type = relationship('DocumentType', lazy = 'noload', foreign_keys=[type_id])
-    document = relationship('Document', lazy = 'noload', uselist=False, back_populates="document_split")
+    document = relationship('Document', lazy = 'noload', uselist=False, back_populates="document_process")
     
 
 class DocumentTransForm(Base):
