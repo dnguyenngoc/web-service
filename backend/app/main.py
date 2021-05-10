@@ -32,6 +32,8 @@ origins = [
     "http://{host}:{port}".format(host=config.HOST_NAME, port = config.FE_PORT),
     "http://10.1.33.76:8080",
     "http://10.1.33.76:8081",
+    "http://161.117.87.31:8080",
+    "http://161.117.87.31:8081",
 ]
 app.add_middleware(
     CORSMiddleware,

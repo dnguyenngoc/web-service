@@ -10,7 +10,7 @@ from databases.repository_logic import document_process_logic, document_logic, d
 
 router = APIRouter()
 
-@router.get('/document/{type_doc}/{status_code}/last')
+@router.post('/document/{type_doc}/{status_code}/last')
 def split_last(
     *,
     type_doc: str,
@@ -33,4 +33,23 @@ def split_last(
             'fields': fields
         }
         return obj
+    elif type_doc == 'discharge-record' and status_code == 200:
+        return    {
+            'id': 1,
+            'origin': {'name': 'origin', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_origin.png'.format(port = config.BE_PORT, host = config.BE_HOST)}, 
+            'crop': {'name': 'crop', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_crop.png'.format(port = config.BE_PORT, host = config.BE_HOST)}, 
+            'fields': [
+                 {'name': 'Patient Name', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_name.png'.format(port = config.BE_PORT, host = config.BE_HOST)}, 
+                 {'name': 'Age Or DOB', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_age.png'.format(port = config.BE_PORT, host = config.BE_HOST)},
+                 {'name': 'Gender', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_gender.png'.format(port = config.BE_PORT, host = config.BE_HOST)},
+                 {'name': 'Nation', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_nation.png'.format(port = config.BE_PORT, host = config.BE_HOST)},
+                 {'name': 'Insurance Number', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_id.png'.format(port = config.BE_PORT, host = config.BE_HOST)},
+                 {'name': 'Address', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_address.png'.format(port = config.BE_PORT, host = config.BE_HOST)},
+                 {'name': 'Event Start Date', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_come.png'.format(port = config.BE_PORT, host = config.BE_HOST)},
+                 {'name': 'Event End Date', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_out.png'.format(port = config.BE_PORT, host = config.BE_HOST)},
+                 {'name': 'Diagnosis Description', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_diag.png'.format(port = config.BE_PORT, host = config.BE_HOST)},
+                 {'name': 'Treatment Description', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_solu.png'.format(port = config.BE_PORT, host = config.BE_HOST)},
+                 {'name': 'Note', 'value': 'http://{host}:{port}/api/v1/ftp/image/discharge-record/import/fake/1_note.png'.format(port = config.BE_PORT, host = config.BE_HOST)},
+            ]
+        }
    

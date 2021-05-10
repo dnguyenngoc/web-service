@@ -21,7 +21,7 @@ import ImagePreview from './ImagePreview.js'
 import '../styles/container.scss'
 
 
-const API_SERVER = 'http://10.1.33.76:8081/api'
+const API_SERVER = 'http://161.117.87.31:8081/api'
 
 
 function getCurrentDate(separator='-'){
@@ -59,19 +59,19 @@ class Overview extends Component {
         },
         identityCard: {
             len: 0,
-            data: [],
+            data: {},
            
         },
          dischargeRecord: {
             len: 0,
-            data: [],
+            data: {},
         },
         isLoading: true,
       }
     }
 
     async componentDidMount(){
-        await fetch(API_SERVER + '/v1/worflow-v1/preview/full-worflow/pipeline', { method: 'GET'})
+        await fetch(API_SERVER + '/v1/workflow/full-workflow/pipeline', { method: 'GET'})
             .then(response => response.json())
             .then(data => {
                  this.setState({fullWorflow: data})
@@ -134,39 +134,35 @@ class Overview extends Component {
     }
     
     async handleClick(type, date = this.state.day) {
+        const dataId = new FormData()
+        dataId.append('type_doc', type);
+        dataId.append('status_code', 200);
        if (type === 'identity-card') {
-            const dataId = new FormData()
-            dataId.append('type_id', 1);
-            dataId.append('status_id', 2);
-            dataId.append('day', this.state.day);
             const requestOptions = { method: 'POST', body: dataId}
-            await fetch(API_SERVER + '/v1/worflow-v1/preview', requestOptions)
+            await fetch(API_SERVER + '/v1/show/document/' + type + '/200/last?skip=0', requestOptions)
                 .then(response => response.json())
                 .then(data => {
-                    this.setState({identityCard: {data: data, len: data.length}})
+                    this.setState({identityCard: {data: data, len: 1}})
                 }
             );
             await this.setState({
-                origin: this.state.identityCard.data[0].origin, 
-                crop: this.state.identityCard.data[0].crop,
-                fields: this.state.identityCard.data[0].fields,
+                origin: this.state.identityCard.data.origin, 
+                crop: this.state.identityCard.data.crop,
+                fields: this.state.identityCard.data.fields,
                 typeShow: 1,
             });
-        } else if (type === 'discharge_record'){
-            const dataId = new FormData()
-            dataId.append('type_id', 2);
-            dataId.append('status_id', 2);
-            dataId.append('day', this.state.day);
-            await fetch(API_SERVER + '/v1/worflow-v1/preview', { method: 'POST', body: dataId})
+       }else if (type === 'discharge-record') {
+            await fetch(API_SERVER + '/v1/show/document/' + type +  '/200/last?skip=0', { method: 'POST', body: dataId})
                 .then(response => response.json())
                 .then(data => {
-                    this.setState({dischargeRecord: {data: data, len: data.length}})
+                    this.setState({dischargeRecord: {data: data, len: 1}})
+                    console.log(data)
                 }
             );
             await this.setState({
-                origin: this.state.dischargeRecord.data[0].origin, 
-                crop: this.state.dischargeRecord.data[0].crop,
-                fields: this.state.dischargeRecord.data[0].fields,
+                origin: this.state.dischargeRecord.data.origin, 
+                crop: this.state.dischargeRecord.data.crop,
+                fields: this.state.dischargeRecord.data.fields,
                 typeShow: 2,
             });
         }
