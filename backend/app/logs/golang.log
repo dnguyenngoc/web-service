@@ -6198,3 +6198,617 @@ WHERE status.status_code = %(status_code_1)s
  LIMIT %(param_1)s
 2021-05-10 12:08:46,032 - INFO - [cached since 1.506s ago] {'status_code_1': 200, 'param_1': 1}
 2021-05-10 12:08:46,033 - INFO - ROLLBACK
+2021-05-10 12:10:07,036 - INFO - BEGIN (implicit)
+2021-05-10 12:10:07,037 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:07,037 - INFO - [cached since 82.52s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:10:07,039 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:07,039 - INFO - [cached since 82.51s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:07,041 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:10:07,041 - INFO - [cached since 82.51s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:10:07,044 - INFO - ROLLBACK
+2021-05-10 12:10:07,535 - INFO - BEGIN (implicit)
+2021-05-10 12:10:07,536 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:07,536 - INFO - [cached since 83.02s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-10 12:10:07,538 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:07,538 - INFO - [cached since 83.01s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:07,540 - INFO - ROLLBACK
+2021-05-10 12:10:08,086 - INFO - BEGIN (implicit)
+2021-05-10 12:10:08,087 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:08,087 - INFO - [cached since 83.57s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:10:08,089 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:08,089 - INFO - [cached since 83.56s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:08,091 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:10:08,091 - INFO - [cached since 83.56s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:10:08,093 - INFO - ROLLBACK
+2021-05-10 12:10:27,079 - INFO - BEGIN (implicit)
+2021-05-10 12:10:27,080 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:27,080 - INFO - [cached since 102.6s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:10:27,082 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:27,082 - INFO - [cached since 102.6s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:27,084 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:10:27,084 - INFO - [cached since 102.6s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:10:27,087 - INFO - ROLLBACK
+2021-05-10 12:10:28,726 - INFO - BEGIN (implicit)
+2021-05-10 12:10:28,726 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:28,726 - INFO - [cached since 104.2s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-10 12:10:28,728 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:28,728 - INFO - [cached since 104.2s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:28,730 - INFO - ROLLBACK
+2021-05-10 12:10:29,565 - INFO - BEGIN (implicit)
+2021-05-10 12:10:29,566 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:29,566 - INFO - [cached since 105s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:10:29,567 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:29,567 - INFO - [cached since 105s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:29,569 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:10:29,569 - INFO - [cached since 105s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:10:29,571 - INFO - ROLLBACK
+2021-05-10 12:10:30,479 - INFO - BEGIN (implicit)
+2021-05-10 12:10:30,480 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:30,480 - INFO - [cached since 106s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:10:30,482 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:30,482 - INFO - [cached since 106s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:30,483 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:10:30,484 - INFO - [cached since 106s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:10:30,486 - INFO - ROLLBACK
+2021-05-10 12:10:30,805 - INFO - BEGIN (implicit)
+2021-05-10 12:10:30,805 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:30,806 - INFO - [cached since 106.3s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-10 12:10:30,807 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:30,807 - INFO - [cached since 106.3s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:30,809 - INFO - ROLLBACK
+2021-05-10 12:10:44,273 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 50, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/ftp_v1.py", line 151, in get_image_ftp
+    image = ftp.read(type_doc + '/' + status_name + '/' + date + '/' + name)
+  File "/home/pot/project/web-service/backend/app/helpers/ftp_utils.py", line 24, in read
+    fh = urllib2.urlopen('ftp://{user}:{pw}@{host}/{path}'.format(
+  File "/opt/anaconda3/lib/python3.8/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/opt/anaconda3/lib/python3.8/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/opt/anaconda3/lib/python3.8/urllib/request.py", line 542, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/opt/anaconda3/lib/python3.8/urllib/request.py", line 502, in _call_chain
+    result = func(*args)
+  File "/opt/anaconda3/lib/python3.8/urllib/request.py", line 1585, in ftp_open
+    raise exc.with_traceback(sys.exc_info()[2])
+  File "/opt/anaconda3/lib/python3.8/urllib/request.py", line 1567, in ftp_open
+    fw = self.connect_ftp(user, passwd, host, port, dirs, req.timeout)
+  File "/opt/anaconda3/lib/python3.8/urllib/request.py", line 1588, in connect_ftp
+    return ftpwrapper(user, passwd, host, port, dirs, timeout,
+  File "/opt/anaconda3/lib/python3.8/urllib/request.py", line 2409, in __init__
+    self.init()
+  File "/opt/anaconda3/lib/python3.8/urllib/request.py", line 2421, in init
+    self.ftp.cwd(_target)
+  File "/opt/anaconda3/lib/python3.8/ftplib.py", line 614, in cwd
+    return self.voidcmd(cmd)
+  File "/opt/anaconda3/lib/python3.8/ftplib.py", line 280, in voidcmd
+    return self.voidresp()
+  File "/opt/anaconda3/lib/python3.8/ftplib.py", line 253, in voidresp
+    resp = self.getresp()
+  File "/opt/anaconda3/lib/python3.8/ftplib.py", line 248, in getresp
+    raise error_perm(resp)
+urllib.error.URLError: <urlopen error ftp error: error_perm('550 Failed to change directory.')>
+2021-05-10 12:10:56,960 - INFO - BEGIN (implicit)
+2021-05-10 12:10:56,960 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:56,960 - INFO - [cached since 132.4s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:10:56,962 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:56,962 - INFO - [cached since 132.4s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:56,964 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:10:56,964 - INFO - [cached since 132.4s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:10:56,967 - INFO - ROLLBACK
+2021-05-10 12:10:57,789 - INFO - BEGIN (implicit)
+2021-05-10 12:10:57,790 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:57,790 - INFO - [cached since 133.3s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-10 12:10:57,791 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:57,792 - INFO - [cached since 133.3s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:57,793 - INFO - ROLLBACK
+2021-05-10 12:10:58,702 - INFO - BEGIN (implicit)
+2021-05-10 12:10:58,702 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:58,702 - INFO - [cached since 134.2s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:10:58,704 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:58,704 - INFO - [cached since 134.2s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:58,705 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:10:58,706 - INFO - [cached since 134.2s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:10:58,708 - INFO - ROLLBACK
+2021-05-10 12:10:59,221 - INFO - BEGIN (implicit)
+2021-05-10 12:10:59,222 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:59,223 - INFO - [cached since 134.7s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-10 12:10:59,225 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:10:59,226 - INFO - [cached since 134.7s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:10:59,228 - INFO - ROLLBACK
+2021-05-10 12:11:00,414 - INFO - BEGIN (implicit)
+2021-05-10 12:11:00,415 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:00,416 - INFO - [cached since 135.9s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:11:00,417 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:00,418 - INFO - [cached since 135.9s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:11:00,419 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:11:00,420 - INFO - [cached since 135.9s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:11:00,422 - INFO - ROLLBACK
+2021-05-10 12:11:02,069 - INFO - BEGIN (implicit)
+2021-05-10 12:11:02,069 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:02,069 - INFO - [cached since 137.5s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:11:02,071 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:02,071 - INFO - [cached since 137.5s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:11:02,073 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:11:02,073 - INFO - [cached since 137.5s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:11:02,075 - INFO - ROLLBACK
+2021-05-10 12:11:02,789 - INFO - BEGIN (implicit)
+2021-05-10 12:11:02,790 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:02,790 - INFO - [cached since 138.3s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-10 12:11:02,792 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:02,792 - INFO - [cached since 138.3s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:11:02,794 - INFO - ROLLBACK
+2021-05-10 12:11:04,446 - INFO - BEGIN (implicit)
+2021-05-10 12:11:04,446 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:04,446 - INFO - [cached since 139.9s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:11:04,448 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:04,448 - INFO - [cached since 139.9s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:11:04,450 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:11:04,451 - INFO - [cached since 139.9s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:11:04,691 - INFO - ROLLBACK
+2021-05-10 12:11:17,166 - INFO - BEGIN (implicit)
+2021-05-10 12:11:17,166 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:17,166 - INFO - [cached since 152.6s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:11:17,168 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:17,168 - INFO - [cached since 152.6s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:11:17,169 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:11:17,169 - INFO - [cached since 152.6s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:11:17,172 - INFO - ROLLBACK
+2021-05-10 12:11:18,192 - INFO - BEGIN (implicit)
+2021-05-10 12:11:18,192 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:18,193 - INFO - [cached since 153.7s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:11:18,195 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:18,195 - INFO - [cached since 153.7s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:11:18,197 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:11:18,197 - INFO - [cached since 153.7s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:11:18,200 - INFO - ROLLBACK
+2021-05-10 12:11:20,727 - INFO - BEGIN (implicit)
+2021-05-10 12:11:20,727 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:20,727 - INFO - [cached since 156.2s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:11:20,729 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:20,729 - INFO - [cached since 156.2s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:11:20,731 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:11:20,731 - INFO - [cached since 156.2s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:11:20,733 - INFO - ROLLBACK
+2021-05-10 12:11:29,551 - INFO - BEGIN (implicit)
+2021-05-10 12:11:29,551 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:29,551 - INFO - [cached since 165s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:11:29,553 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:11:29,553 - INFO - [cached since 165s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:11:29,555 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:11:29,555 - INFO - [cached since 165s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:11:29,557 - INFO - ROLLBACK
+2021-05-10 12:12:01,031 - INFO - BEGIN (implicit)
+2021-05-10 12:12:01,031 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:12:01,031 - INFO - [cached since 196.5s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:12:01,033 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:12:01,033 - INFO - [cached since 196.5s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:12:01,035 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:12:01,035 - INFO - [cached since 196.5s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:12:01,037 - INFO - ROLLBACK
+2021-05-10 12:12:01,550 - INFO - BEGIN (implicit)
+2021-05-10 12:12:01,550 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:12:01,551 - INFO - [cached since 197s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-10 12:12:01,552 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:12:01,553 - INFO - [cached since 197s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:12:01,555 - INFO - ROLLBACK
+2021-05-10 12:12:02,245 - INFO - BEGIN (implicit)
+2021-05-10 12:12:02,246 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:12:02,246 - INFO - [cached since 197.7s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:12:02,248 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:12:02,248 - INFO - [cached since 197.7s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:12:02,250 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:12:02,250 - INFO - [cached since 197.7s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:12:02,491 - INFO - ROLLBACK
+2021-05-10 12:12:03,309 - INFO - BEGIN (implicit)
+2021-05-10 12:12:03,310 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:12:03,310 - INFO - [cached since 198.8s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:12:03,311 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:12:03,311 - INFO - [cached since 198.8s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:12:03,313 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:12:03,313 - INFO - [cached since 198.8s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:12:03,363 - INFO - ROLLBACK
+2021-05-10 12:12:03,733 - INFO - BEGIN (implicit)
+2021-05-10 12:12:03,733 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:12:03,734 - INFO - [cached since 199.2s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-10 12:12:03,735 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:12:03,735 - INFO - [cached since 199.2s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:12:03,946 - INFO - ROLLBACK
+2021-05-10 12:13:35,433 - INFO - BEGIN (implicit)
+2021-05-10 12:13:35,433 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.status_id = %(status_id_1)s) AS anon_1
+2021-05-10 12:13:35,433 - INFO - [cached since 292.8s ago] {'status_id_1': 1}
+2021-05-10 12:13:35,435 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-10 12:13:35,435 - INFO - [cached since 292.8s ago] {'type_id_1': 1, 'status_id_1': 1}
+2021-05-10 12:13:35,436 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-10 12:13:35,437 - INFO - [cached since 292.8s ago] {'type_id_1': 1, 'status_id_1': 5}
+2021-05-10 12:13:35,438 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-10 12:13:35,438 - INFO - [cached since 292.8s ago] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-10 12:13:35,439 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-10 12:13:35,439 - INFO - [cached since 292.8s ago] {'type_id_1': 2, 'status_id_1': 5}
+2021-05-10 12:13:35,441 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-10 12:13:35,441 - INFO - [cached since 292.8s ago] {'type_id_1': 1, 'status_id_1': 2}
+2021-05-10 12:13:35,442 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-10 12:13:35,443 - INFO - [cached since 292.8s ago] {'type_id_1': 2, 'status_id_1': 2}
+2021-05-10 12:13:35,444 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-10 12:13:35,444 - INFO - [cached since 292.8s ago] {'type_id_1': 1, 'status_id_1': 3}
+2021-05-10 12:13:35,445 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-10 12:13:35,446 - INFO - [cached since 292.8s ago] {'type_id_1': 2, 'status_id_1': 3}
+2021-05-10 12:13:35,447 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-10 12:13:35,447 - INFO - [cached since 292.8s ago] {'type_id_1': 1, 'status_id_1': 4}
+2021-05-10 12:13:35,449 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-10 12:13:35,449 - INFO - [cached since 292.8s ago] {'type_id_1': 2, 'status_id_1': 4}
+2021-05-10 12:13:35,450 - INFO - ROLLBACK
+2021-05-10 12:14:44,542 - INFO - BEGIN (implicit)
+2021-05-10 12:14:44,542 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:14:44,542 - INFO - [cached since 360s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:14:44,544 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:14:44,544 - INFO - [cached since 360s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:14:44,545 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:14:44,545 - INFO - [cached since 360s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:14:44,548 - INFO - ROLLBACK
+2021-05-10 12:14:50,501 - INFO - BEGIN (implicit)
+2021-05-10 12:14:50,502 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:14:50,502 - INFO - [cached since 366s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-10 12:14:50,504 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:14:50,504 - INFO - [cached since 366s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:14:50,506 - INFO - ROLLBACK
+2021-05-10 12:14:55,616 - INFO - BEGIN (implicit)
+2021-05-10 12:14:55,617 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:14:55,617 - INFO - [cached since 371.1s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-10 12:14:55,618 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-10 12:14:55,618 - INFO - [cached since 371.1s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-10 12:14:55,620 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-10 12:14:55,620 - INFO - [cached since 371.1s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-10 12:14:55,622 - INFO - ROLLBACK
+2021-05-10 15:33:54,767 - WARNING - Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 172, in handle_events
+    event = self.conn.next_event()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
+2021-05-10 19:28:07,056 - WARNING - Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 172, in handle_events
+    event = self.conn.next_event()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/opt/jupyter/lib/python3.8/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line

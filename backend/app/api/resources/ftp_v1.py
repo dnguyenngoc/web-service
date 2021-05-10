@@ -42,7 +42,7 @@ def upload_image_ftp(
     ftp.chdir(path)
     ftp.upload_byte_image(byte_image, path + '/' + name_document)
     ftp.close()
-    url = 'http://{host}:{port}/api/v1/workflow/image/{type_doc}/{status_name}/{string_date}/{name}'.format(
+    url = 'http://{host}:{port}/api/v1/ftp/image/{type_doc}/{status_name}/{string_date}/{name}'.format(
         host = config.BE_HOST, port = config.BE_PORT, type_doc = type_doc, status_name = status_name, string_date = string_date, name = name_document)
     data = document_entity.DocumentCreate(
             name = name_document,
