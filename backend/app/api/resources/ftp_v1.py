@@ -74,7 +74,7 @@ def upload_image_ftp_field(
         
     field = document_field_logic.get_by_name(db_session, field_name)
     if not field: raise HTTPException(status_code=400, detail="wrong field")
-
+    
     status_name = 'export'
     type_doc = doc.document_type.name
     ftp = FTP(config.FTP_URL, config.FTP_USERNAME, config.FTP_PASSWORD)
@@ -86,19 +86,36 @@ def upload_image_ftp_field(
     ftp.close()
     url = 'http://{host}:{port}/api/v1/ftp/image/{type_doc}/{status_name}/{string_date}/{name}'.format(
         host = config.BE_HOST, port = config.BE_PORT, type_doc = type_doc, status_name = status_name, string_date = string_date, name = name)
-    return document_process_crud.create(
-        db_session, 
-        document_process_entity.DocumentProcessCreate(
-            name = field_name,
-            value = None,
-            is_extracted = False,
-            type_id = doc.type_id,
-            url= url,
-            document_id = document_id, 
-            field_id = field.id,
-            create_date= time_utils.utc_now()
+    check_process = document_process_logic.read_by_document_id_and_field_id(db_session, doc.id, field.id)
+    if check_process == 0:
+        return document_process_crud.create(
+            db_session, 
+            document_process_entity.DocumentProcessCreate(
+                name = field_name,
+                value = None,
+                is_extracted = False,
+                type_id = doc.type_id,
+                url= url,
+                document_id = document_id, 
+                field_id = field.id,
+                create_date= time_utils.utc_now()
+            )
         )
-    )
+    else:
+        return document_process_crud.update(
+            db_session, 
+            doc.id,
+            {
+                'name' : field_name,
+                'value' : None,
+                'is_extracted' : False,
+                'type_id' : doc.type_id,
+                'url': url,
+                'field_id' : field.id,
+                'create_date': time_utils.utc_now()
+            }
+        )
+        
 
         
 @router.post('/image/document-crop')

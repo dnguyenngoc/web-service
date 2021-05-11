@@ -7,8 +7,10 @@ from fastapi import Form
 
 from databases.db import get_db
 from databases.repository_logic import document_process_logic, document_logic, document_type_logic, status_logic
+from databases.repository_crud import document_process_crud
 
 router = APIRouter()
+
 
 @router.post('/document/{type_doc}/{status_code}/last')
 def split_last(

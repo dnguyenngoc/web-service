@@ -4,21 +4,6 @@ import ReactFlow, {
     Controls,
     ControlButton,
     ReactFlowProvider,
-//   removeElements,
-//   addEdge,
-//   MiniMap,
-//   Controls,
-//   Background,
-//   isNode,
-//   Node,
-//   Elements,
-//   FlowElement,
-//   OnLoadParams,
-//   FlowTransform,
-//   SnapGrid,
-//   ArrowHeadType,
-//   Connection,
-//   Edge,
 } from 'react-flow-renderer';
 import ImagePreview from './ImagePreview.js'
 import '../styles/container.scss'

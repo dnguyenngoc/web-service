@@ -33,3 +33,8 @@ elif ENVIRONMENT == 'production':
     BE_HOST = '10.1.33.76'
 else:
     SQLALCHEMY_DATABASE_URL = "sqlite:///./databases/web-scan.db"
+    FTP_USERNAME = 'pot'
+    FTP_PASSWORD = 'D@123123'
+    FTP_URL = '161.117.87.31'
+    FTP_PORT = 21
+    BE_HOST = '161.117.87.31'
