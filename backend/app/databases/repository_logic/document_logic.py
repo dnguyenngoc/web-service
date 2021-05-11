@@ -40,3 +40,6 @@ def get_by_id_join_type_join_status(db_session: Session, document_id: int):
                             .options(joinedload('document_type')) \
                             .options(joinedload('status')) \
                             .first()
+
+def get_all_type_and_status(db_session: Session, type_id: int, status_id: int) -> Document:
+    return db_session.query(Document).filter(Document.type_id==type_id, Document.status_id==status_id).all()

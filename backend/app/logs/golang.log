@@ -19525,3 +19525,777 @@ WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s 
  LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
 2021-05-11 15:47:19,862 - INFO - [cached since 7.106e+04s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
 2021-05-11 15:47:19,864 - INFO - ROLLBACK
+2021-05-11 15:50:30,861 - INFO - BEGIN (implicit)
+2021-05-11 15:50:30,861 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:30,862 - INFO - [cached since 7.125e+04s ago] {'status_id_1': 1}
+2021-05-11 15:50:30,864 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:30,864 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 1, 'status_id_1': 1}
+2021-05-11 15:50:30,865 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:30,865 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 1, 'status_id_1': 5}
+2021-05-11 15:50:30,867 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:30,867 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-11 15:50:30,869 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:30,869 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 2, 'status_id_1': 5}
+2021-05-11 15:50:30,870 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:30,871 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 1, 'status_id_1': 2}
+2021-05-11 15:50:30,872 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:30,872 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 2, 'status_id_1': 2}
+2021-05-11 15:50:30,873 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:30,874 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 1, 'status_id_1': 3}
+2021-05-11 15:50:30,875 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:30,875 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 2, 'status_id_1': 3}
+2021-05-11 15:50:30,876 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:30,876 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 1, 'status_id_1': 4}
+2021-05-11 15:50:30,878 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:30,878 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 2, 'status_id_1': 4}
+2021-05-11 15:50:30,879 - INFO - ROLLBACK
+2021-05-11 15:50:33,537 - INFO - BEGIN (implicit)
+2021-05-11 15:50:33,537 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 15:50:33,537 - INFO - [cached since 7.126e+04s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-11 15:50:33,539 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 15:50:33,539 - INFO - [cached since 7.126e+04s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-11 15:50:33,541 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-11 15:50:33,541 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-11 15:50:33,543 - INFO - ROLLBACK
+2021-05-11 15:50:36,616 - INFO - BEGIN (implicit)
+2021-05-11 15:50:36,616 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 15:50:36,616 - INFO - [cached since 7.126e+04s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 15:50:36,618 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 15:50:36,618 - INFO - [cached since 7.126e+04s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-11 15:50:36,619 - INFO - ROLLBACK
+2021-05-11 15:50:37,775 - INFO - BEGIN (implicit)
+2021-05-11 15:50:37,775 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:37,775 - INFO - [cached since 7.125e+04s ago] {'status_id_1': 1}
+2021-05-11 15:50:37,778 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:37,778 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 1, 'status_id_1': 1}
+2021-05-11 15:50:37,779 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:37,780 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 1, 'status_id_1': 5}
+2021-05-11 15:50:37,781 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:37,781 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-11 15:50:37,783 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:37,783 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 2, 'status_id_1': 5}
+2021-05-11 15:50:37,785 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:37,785 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 1, 'status_id_1': 2}
+2021-05-11 15:50:37,787 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:37,787 - INFO - [cached since 7.125e+04s ago] {'type_id_1': 2, 'status_id_1': 2}
+2021-05-11 15:50:37,788 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:37,789 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 1, 'status_id_1': 3}
+2021-05-11 15:50:37,790 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:37,790 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 2, 'status_id_1': 3}
+2021-05-11 15:50:37,792 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:37,792 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 1, 'status_id_1': 4}
+2021-05-11 15:50:37,793 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:37,793 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 2, 'status_id_1': 4}
+2021-05-11 15:50:37,795 - INFO - ROLLBACK
+2021-05-11 15:50:40,030 - INFO - BEGIN (implicit)
+2021-05-11 15:50:40,031 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:40,031 - INFO - [cached since 7.126e+04s ago] {'status_id_1': 1}
+2021-05-11 15:50:40,033 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:40,033 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 1, 'status_id_1': 1}
+2021-05-11 15:50:40,034 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:40,035 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 1, 'status_id_1': 5}
+2021-05-11 15:50:40,036 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:40,036 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-11 15:50:40,038 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:40,038 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 2, 'status_id_1': 5}
+2021-05-11 15:50:40,039 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:40,040 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 1, 'status_id_1': 2}
+2021-05-11 15:50:40,041 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:40,041 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 2, 'status_id_1': 2}
+2021-05-11 15:50:40,043 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:40,043 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 1, 'status_id_1': 3}
+2021-05-11 15:50:40,044 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:40,044 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 2, 'status_id_1': 3}
+2021-05-11 15:50:40,045 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:40,046 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 1, 'status_id_1': 4}
+2021-05-11 15:50:40,047 - INFO - SELECT count(*) AS count_1 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s) AS anon_1
+2021-05-11 15:50:40,047 - INFO - [cached since 7.126e+04s ago] {'type_id_1': 2, 'status_id_1': 4}
+2021-05-11 15:50:40,048 - INFO - ROLLBACK
+2021-05-11 15:53:28,748 - INFO - BEGIN (implicit)
+2021-05-11 15:53:28,749 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 15:53:28,749 - INFO - [cached since 7.143e+04s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-11 15:53:28,751 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 15:53:28,751 - INFO - [cached since 7.143e+04s ago] {'status_code_1': 200, 'param_1': 1}
+2021-05-11 15:53:28,753 - INFO - SELECT anon_1.document_id AS anon_1_document_id, anon_1.document_name AS anon_1_document_name, anon_1.document_url AS anon_1_document_url, anon_1.document_crop_url AS anon_1_document_crop_url, anon_1.document_export_date AS anon_1_document_export_date, anon_1.document_create_date AS anon_1_document_create_date, anon_1.document_update_date AS anon_1_document_update_date, anon_1.document_type_id AS anon_1_document_type_id, anon_1.document_status_id AS anon_1_document_status_id, document_process_1.id AS document_process_1_id, document_process_1.name AS document_process_1_name, document_process_1.value AS document_process_1_value, document_process_1.is_extracted AS document_process_1_is_extracted, document_process_1.url AS document_process_1_url, document_process_1.create_date AS document_process_1_create_date, document_process_1.update_date AS document_process_1_update_date, document_process_1.type_id AS document_process_1_type_id, document_process_1.document_id AS document_process_1_document_id, document_process_1.field_id AS document_process_1_field_id 
+FROM (SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s ORDER BY document.update_date DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s) AS anon_1 LEFT OUTER JOIN document_process AS document_process_1 ON anon_1.document_id = document_process_1.document_id ORDER BY anon_1.document_update_date DESC
+2021-05-11 15:53:28,753 - INFO - [cached since 7.143e+04s ago] {'type_id_1': 1, 'status_id_1': 2, 'param_1': 1, 'param_2': 0}
+2021-05-11 15:53:28,756 - INFO - ROLLBACK
+2021-05-11 15:54:09,176 - INFO - BEGIN (implicit)
+2021-05-11 15:54:09,176 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 15:54:09,176 - INFO - [cached since 7.147e+04s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-11 15:54:09,178 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 15:54:09,178 - INFO - [cached since 7.147e+04s ago] {'status_code_1': 100, 'param_1': 1}
+2021-05-11 15:54:09,180 - INFO - ROLLBACK
+2021-05-11 15:54:15,794 - INFO - BEGIN (implicit)
+2021-05-11 15:54:15,794 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 15:54:15,794 - INFO - [cached since 7.148e+04s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-11 15:54:15,796 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 15:54:15,796 - INFO - [cached since 7.148e+04s ago] {'status_code_1': 100, 'param_1': 1}
+2021-05-11 15:54:15,797 - INFO - ROLLBACK
+2021-05-11 16:02:27,513 - INFO - Shutting down
+2021-05-11 16:02:27,613 - INFO - Waiting for application shutdown.
+2021-05-11 16:02:27,614 - INFO - Application shutdown complete.
+2021-05-11 16:02:27,614 - INFO - Finished server process [25709]
+2021-05-11 16:03:24,550 - INFO - Started server process [663]
+2021-05-11 16:03:24,551 - INFO - Waiting for application startup.
+2021-05-11 16:03:24,551 - INFO - Application startup complete.
+2021-05-11 16:03:24,552 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-11 16:03:38,195 - INFO - BEGIN (implicit)
+2021-05-11 16:03:38,197 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:03:38,198 - INFO - [generated in 0.00026s] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-11 16:03:38,200 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 50, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/ml_split_v1.py", line 22, in get_all_docs_status
+    docs = document_logic.get_all_type_name_and_status_code(db_session, doc_type.name, status_code)
+AttributeError: module 'databases.repository_logic.document_logic' has no attribute 'get_all_type_name_and_status_code'
+2021-05-11 16:08:25,773 - INFO - Shutting down
+2021-05-11 16:08:25,874 - INFO - Waiting for application shutdown.
+2021-05-11 16:08:25,874 - INFO - Application shutdown complete.
+2021-05-11 16:08:25,874 - INFO - Finished server process [663]
+2021-05-11 16:08:26,468 - INFO - Started server process [696]
+2021-05-11 16:08:26,468 - INFO - Waiting for application startup.
+2021-05-11 16:08:26,469 - INFO - Application startup complete.
+2021-05-11 16:08:26,469 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-11 16:08:41,418 - INFO - BEGIN (implicit)
+2021-05-11 16:08:41,421 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:08:41,421 - INFO - [generated in 0.00037s] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 16:08:41,424 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 50, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/ml_split_v1.py", line 23, in get_all_docs_status
+    status = status_logic.read_by_status_code(db_session, status_code)
+NameError: name 'status_logic' is not defined
+2021-05-11 16:08:45,201 - INFO - Shutting down
+2021-05-11 16:08:45,302 - INFO - Waiting for application shutdown.
+2021-05-11 16:08:45,302 - INFO - Application shutdown complete.
+2021-05-11 16:08:45,303 - INFO - Finished server process [696]
+2021-05-11 16:08:45,893 - INFO - Started server process [707]
+2021-05-11 16:08:45,894 - INFO - Waiting for application startup.
+2021-05-11 16:08:45,894 - INFO - Application startup complete.
+2021-05-11 16:08:45,894 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-11 16:08:48,761 - INFO - BEGIN (implicit)
+2021-05-11 16:08:48,764 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:08:48,764 - INFO - [generated in 0.00026s] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 16:08:48,766 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 50, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/ml_split_v1.py", line 23, in get_all_docs_status
+    status = status_logic.read_by_status_code(db_session, status_code)
+NameError: name 'status_logic' is not defined
+2021-05-11 16:09:04,873 - INFO - Shutting down
+2021-05-11 16:09:04,974 - INFO - Waiting for application shutdown.
+2021-05-11 16:09:04,974 - INFO - Application shutdown complete.
+2021-05-11 16:09:04,975 - INFO - Finished server process [707]
+2021-05-11 16:09:05,561 - INFO - Started server process [723]
+2021-05-11 16:09:05,561 - INFO - Waiting for application startup.
+2021-05-11 16:09:05,562 - INFO - Application startup complete.
+2021-05-11 16:09:05,562 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-11 16:09:06,297 - INFO - BEGIN (implicit)
+2021-05-11 16:09:06,299 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:06,300 - INFO - [generated in 0.00028s] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 16:09:06,303 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:06,303 - INFO - [generated in 0.00027s] {'status_code_1': 100, 'param_1': 1}
+2021-05-11 16:09:06,306 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s
+2021-05-11 16:09:06,306 - INFO - [generated in 0.00023s] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-11 16:09:06,308 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 50, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/ml_split_v1.py", line 27, in get_all_docs_status
+    if not docs: raise HTTPException(status_code=404, detail="Not found")
+NameError: name 'HTTPException' is not defined
+2021-05-11 16:09:07,247 - INFO - BEGIN (implicit)
+2021-05-11 16:09:07,248 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:07,248 - INFO - [cached since 0.9487s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 16:09:07,251 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:07,251 - INFO - [cached since 0.9485s ago] {'status_code_1': 100, 'param_1': 1}
+2021-05-11 16:09:07,254 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s
+2021-05-11 16:09:07,254 - INFO - [cached since 0.9481s ago] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-11 16:09:07,255 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 50, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/ml_split_v1.py", line 27, in get_all_docs_status
+    if not docs: raise HTTPException(status_code=404, detail="Not found")
+NameError: name 'HTTPException' is not defined
+2021-05-11 16:09:10,379 - INFO - Shutting down
+2021-05-11 16:09:10,479 - INFO - Waiting for application shutdown.
+2021-05-11 16:09:10,480 - INFO - Application shutdown complete.
+2021-05-11 16:09:10,480 - INFO - Finished server process [723]
+2021-05-11 16:09:11,112 - INFO - Started server process [731]
+2021-05-11 16:09:11,112 - INFO - Waiting for application startup.
+2021-05-11 16:09:11,113 - INFO - Application startup complete.
+2021-05-11 16:09:11,113 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-11 16:09:13,022 - INFO - BEGIN (implicit)
+2021-05-11 16:09:13,026 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:13,026 - INFO - [generated in 0.00038s] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 16:09:13,030 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:13,031 - INFO - [generated in 0.00038s] {'status_code_1': 100, 'param_1': 1}
+2021-05-11 16:09:13,035 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s
+2021-05-11 16:09:13,035 - INFO - [generated in 0.00039s] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-11 16:09:13,038 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 81, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/uvicorn/middleware/debug.py", line 78, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 25, in __call__
+    response = await self.dispatch_func(request, self.call_next)
+  File "main.py", line 50, in db_session_middleware
+    response = await call_next(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 45, in call_next
+    task.result()
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/base.py", line 38, in coro
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/middleware/cors.py", line 78, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc from None
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/routing.py", line 41, in app
+    response = await func(request)
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/jupyter/lib/python3.8/site-packages/fastapi/routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/jupyter/lib/python3.8/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+  File "/opt/anaconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pot/project/web-service/backend/app/api/resources/ml_split_v1.py", line 27, in get_all_docs_status
+    if not docs: raise HTTPException(status_code=404, detail="Not found")
+NameError: name 'HTTPException' is not defined
+2021-05-11 16:09:37,346 - INFO - Shutting down
+2021-05-11 16:09:37,447 - INFO - Waiting for application shutdown.
+2021-05-11 16:09:37,447 - INFO - Application shutdown complete.
+2021-05-11 16:09:37,447 - INFO - Finished server process [731]
+2021-05-11 16:09:38,042 - INFO - Started server process [744]
+2021-05-11 16:09:38,042 - INFO - Waiting for application startup.
+2021-05-11 16:09:38,042 - INFO - Application startup complete.
+2021-05-11 16:09:38,043 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-11 16:09:38,230 - INFO - BEGIN (implicit)
+2021-05-11 16:09:38,232 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:38,232 - INFO - [generated in 0.00033s] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 16:09:38,236 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:38,236 - INFO - [generated in 0.00033s] {'status_code_1': 100, 'param_1': 1}
+2021-05-11 16:09:38,240 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s
+2021-05-11 16:09:38,240 - INFO - [generated in 0.00032s] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-11 16:09:38,243 - INFO - ROLLBACK
+2021-05-11 16:09:39,609 - INFO - BEGIN (implicit)
+2021-05-11 16:09:39,610 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:39,610 - INFO - [cached since 1.378s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 16:09:39,611 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:39,612 - INFO - [cached since 1.375s ago] {'status_code_1': 100, 'param_1': 1}
+2021-05-11 16:09:39,613 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s
+2021-05-11 16:09:39,613 - INFO - [cached since 1.373s ago] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-11 16:09:39,615 - INFO - ROLLBACK
+2021-05-11 16:09:40,133 - INFO - BEGIN (implicit)
+2021-05-11 16:09:40,134 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:40,134 - INFO - [cached since 1.902s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 16:09:40,136 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:40,136 - INFO - [cached since 1.9s ago] {'status_code_1': 100, 'param_1': 1}
+2021-05-11 16:09:40,138 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s
+2021-05-11 16:09:40,138 - INFO - [cached since 1.898s ago] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-11 16:09:40,140 - INFO - ROLLBACK
+2021-05-11 16:09:40,376 - INFO - BEGIN (implicit)
+2021-05-11 16:09:40,377 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:40,377 - INFO - [cached since 2.145s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 16:09:40,378 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:40,378 - INFO - [cached since 2.142s ago] {'status_code_1': 100, 'param_1': 1}
+2021-05-11 16:09:40,380 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s
+2021-05-11 16:09:40,380 - INFO - [cached since 2.14s ago] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-11 16:09:40,381 - INFO - ROLLBACK
+2021-05-11 16:09:40,583 - INFO - BEGIN (implicit)
+2021-05-11 16:09:40,584 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:40,584 - INFO - [cached since 2.352s ago] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 16:09:40,585 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:09:40,585 - INFO - [cached since 2.349s ago] {'status_code_1': 100, 'param_1': 1}
+2021-05-11 16:09:40,587 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s
+2021-05-11 16:09:40,587 - INFO - [cached since 2.347s ago] {'type_id_1': 2, 'status_id_1': 1}
+2021-05-11 16:09:40,588 - INFO - ROLLBACK
+2021-05-11 16:10:04,539 - INFO - Shutting down
+2021-05-11 16:10:04,640 - INFO - Waiting for application shutdown.
+2021-05-11 16:10:04,640 - INFO - Application shutdown complete.
+2021-05-11 16:10:04,640 - INFO - Finished server process [744]
+2021-05-11 16:10:05,232 - INFO - Started server process [753]
+2021-05-11 16:10:05,233 - INFO - Waiting for application startup.
+2021-05-11 16:10:05,233 - INFO - Application startup complete.
+2021-05-11 16:10:05,233 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-11 16:10:05,455 - INFO - BEGIN (implicit)
+2021-05-11 16:10:05,458 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:10:05,458 - INFO - [generated in 0.00029s] {'name_1': 'discharge-record', 'param_1': 1}
+2021-05-11 16:10:05,461 - INFO - ROLLBACK
+2021-05-11 16:10:18,690 - INFO - BEGIN (implicit)
+2021-05-11 16:10:18,690 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:10:18,690 - INFO - [cached since 13.23s ago] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-11 16:10:18,692 - INFO - ROLLBACK
+2021-05-11 16:10:29,739 - INFO - Shutting down
+2021-05-11 16:10:29,839 - INFO - Waiting for application shutdown.
+2021-05-11 16:10:29,840 - INFO - Application shutdown complete.
+2021-05-11 16:10:29,840 - INFO - Finished server process [753]
+2021-05-11 16:10:30,373 - INFO - Started server process [775]
+2021-05-11 16:10:30,373 - INFO - Waiting for application startup.
+2021-05-11 16:10:30,374 - INFO - Application startup complete.
+2021-05-11 16:10:30,374 - INFO - Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+2021-05-11 16:10:30,458 - INFO - BEGIN (implicit)
+2021-05-11 16:10:30,461 - INFO - SELECT document_type.id AS document_type_id, document_type.name AS document_type_name, document_type.description AS document_type_description, document_type.create_date AS document_type_create_date, document_type.update_date AS document_type_update_date 
+FROM document_type 
+WHERE document_type.name = %(name_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:10:30,461 - INFO - [generated in 0.00037s] {'name_1': 'identity-card', 'param_1': 1}
+2021-05-11 16:10:30,464 - INFO - SELECT status.id AS status_id, status.status_code AS status_status_code, status.status_name AS status_status_name, status.description AS status_description, status.create_date AS status_create_date, status.update_date AS status_update_date 
+FROM status 
+WHERE status.status_code = %(status_code_1)s 
+ LIMIT %(param_1)s
+2021-05-11 16:10:30,464 - INFO - [generated in 0.00025s] {'status_code_1': 100, 'param_1': 1}
+2021-05-11 16:10:30,467 - INFO - SELECT document.id AS document_id, document.name AS document_name, document.url AS document_url, document.crop_url AS document_crop_url, document.export_date AS document_export_date, document.create_date AS document_create_date, document.update_date AS document_update_date, document.type_id AS document_type_id, document.status_id AS document_status_id 
+FROM document 
+WHERE document.type_id = %(type_id_1)s AND document.status_id = %(status_id_1)s
+2021-05-11 16:10:30,467 - INFO - [generated in 0.00023s] {'type_id_1': 1, 'status_id_1': 1}
+2021-05-11 16:10:30,471 - INFO - ROLLBACK
