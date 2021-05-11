@@ -7,6 +7,11 @@
     font-size: 16px;
     text-size-adjust: 100%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;    
+    justify-content: space-between; 
+    background-color: #F5F5F5;
+    width: 100%;
     .header__tag {
         padding: 32px 18px;
         display: -webkit-box;
@@ -25,7 +30,7 @@
              width: 18rem;
         }
         .header__tag__content{
-            margin-left: 4rem;
+            margin-left: 3rem;
             display: flex;
             .header__tag__content__field{
                 margin-left: 3rem;

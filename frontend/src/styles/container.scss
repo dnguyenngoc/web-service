@@ -5,6 +5,15 @@ $dot-color: hsl(256,33,70);
 
 $dot-size: 1px;
 $dot-space: 22px;
+.photo__button{
+    height: 16px;
+    width: auto;
+}
+
+
+.upload{
+    width: 200px;
+}
 
 .overview {
     font-family: nt-dapper, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, Arial, sans-serif;
@@ -12,7 +21,7 @@ $dot-space: 22px;
     letter-spacing: 0.5px;
     line-height: 1.5;
     font-size: 16px;
-    height: 700px;
+    height: 100%;
     background:
     linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
     linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center, $dot-color;
@@ -65,4 +74,21 @@ $dot-space: 22px;
     //             }
         }
     }
+}
+
+.Card {
+      margin-bottom: 10%;
+      margin-left: 33%;
+      margin-top: 5%;
+      padding: 20px 20px;
+      background-color: white;
+      max-width: 33%;
+      max-heigt: 43%;
+      width:33%;
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+      box-sizing: border-box;
 }
