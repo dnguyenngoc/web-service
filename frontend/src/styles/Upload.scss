@@ -1,116 +1,75 @@
-.UploadS {
-  float: left;
-  overflow: hidden;
-  
-  height: auto;
-    width: 100%;
-    .UploadContent{
-       font-size: 25px;
-       font-weight: 300;
-        .Title {
-          margin-bottom: 32px;
-          color: #555;
-        }
-        .Files {
-          align-items: flex-start;
-          justify-items: flex-start;
-          flex: 1;
-          overflow-y: auto;
-            .Content {
-              position: absolute;
-              display: flex;
-              flex-direction: row;
-              padding-top: 16px;
-              box-sizing: border-box;
-              width: 100%;
-              padding-bottom: 150px;
-              margin-bottom: 150px;
+.container{
+    height: 100%;
+    max-width: 700px;
+    display: block;
+    .row {
+        .item-raw{
+            .card{
+                .card-header{
+                    
+                }
+                .card-body{
+                    .mutiple-form{
+                        display: block;
+                        max-width: 640px;
+                        width: 100%;
+                        .multi-preview{
+                            display: flex;
+                            flex-direction: row; 
+                            max-height: 130px;
+                             max-width: 640px;
+                            
+                            .image-preview-x{
+                                display: block;
+                                padding: 20px 10px;
+                                height: auto;
+                                .image-content{
+                                    height: 120px;
+                                    img{
+                                        border-radius: 15px 15px 15px 15px; 
+                                        height: 100px;
+                                        width: 134px;
+                                        max-width: 170px;
+                                        box-shadow: 1px 1px 1px 2px #AAA;
+                                    }
+                                    
+                                }
+                                .image-status{
+                                    
+                                }
+                            }
+                            
+                        }
+                        .form-group{
+                            padding-rigt: 120px;
+                            width: 100%;
+                            max-width: 700px;
+                            padding-top: 2rem;
+                            .form-control{
+                                
+                            }
+                        }
+                        .button-group {
+                            margin-top: 1.2rem;
+                            margin-bottom: 1.2rem;
+                            display: flex;
+                            p{
+                                width: 7%;
+                            }
+                            button{
+                                width: 47%;
+                                padding-right: 10px;
+                                padding-right: 1rem;
+                            }
+                        }
+                      
+                        
+                    }
+                }
             }
         }
     }
-    .ActionContent {
-        height: 100%;
-        .DocumentType{
-            height: 140px;
-        }
-        .ListFile{
-            display: flex;
-        }
-    }
-}
-.floatybox {
-     display: inline-block;
-     width: 220px;
-     height: 100%;
-}
-
-.Space{
-    margin-left: 100px;
-}
-
-
-
-
-.Actions {
-  display: flex;
     
-  flex: 1;
-  width: 100%;
-  align-items: flex-end;
-  flex-direction: column;
-  margin-top: 32px;
 }
-
-
-.Row {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 50px;
-  padding: 8px;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.CheckIcon {
-  opacity: 0.5;
-  margin-left: 32px;
-}
-
-.ProgressWrapper {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  align-items: center;
-}
-
-button {
-  font-family: "Roboto medium", sans-serif;
-  font-size: 14px;
-  display: inline-block;
-  height: 36px;
-  min-width: 88px;
-  padding: 6px 16px;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 0;
-  border-radius: 2px;
-  background: rgba(103, 58, 183, 1);
-  color: #fff;
-  outline: 0;
-}
-
-button:disabled {
-  background: rgb(189, 189, 189);
-  cursor: default;
-}
+.imgfit { max-width:100%;
+max-height:100%;}

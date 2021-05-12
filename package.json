@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.0.0",
+    "react-images-upload": "^1.2.8"
+  }
+}

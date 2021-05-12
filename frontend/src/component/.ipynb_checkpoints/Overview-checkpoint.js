@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import ReactLoading from "react-loading";
 import ReactFlow, {
     Controls,
@@ -10,7 +10,8 @@ import '../styles/container.scss'
 import RefreshIcon from '../assets/images/refresh button.png'
 import Upload from './Upload.js'
 
-const API_SERVER = 'http://161.117.87.31:8081/api'
+const API_SERVER = 'http://10.1.33.76:8081/api'
+// const API_SERVER = 'http://161.117.87.31:8081/api'
 const API_IMPORT_DOCUMENT = API_SERVER + '/v1/ftp/image/import'
 
 function getCurrentDate(separator='-'){
@@ -19,11 +20,6 @@ function getCurrentDate(separator='-'){
     let month = newDate.getMonth() + 1;
     let year = newDate.getFullYear();
     return `${year}${separator}${month<10?`0${month}`:`${month}`}${separator}${date<10?`0${date}`:`${date}`}`
-}
-const onElementClick = (event, element) => {
-    if (element.id == 1) {
-        console.log('import click')
-    }
 }
 
 
@@ -61,7 +57,14 @@ class Overview extends Component {
             data: {},
         },
         isLoading: true,
+        isUpload: false,
       }
+    }
+    
+    onElementClick = (event, element) => {
+        if (element.id == 1) {
+            this.setState({isUpload: true})
+        }
     }
 
     async componentDidMount(){
@@ -205,23 +208,30 @@ class Overview extends Component {
 
     
     render() {
-        const {typeShow, origin, crop, fields, isLoading } = this.state;
+        const {typeShow, origin, crop, fields, isLoading, isUpload  } = this.state;
+
         return (
-            isLoading === true  ? <ReactLoading type='Bubbles' color="red" /> :
-            <div className='overview'>
-              <div className='overview__content'>
-                <div className='overview__content__group'>
-                  <a
-                     onClick={() => this.handleClick('full_workflow')}
-                     className='overview__content__field margin__top__40' >Full Workflow
-                  </a>
-                  <a className='overview__content__field' onClick={() => this.handleClick('identity-card')}>Identity Card</a>
-                  <a className='overview__content__field' onClick={() => this.handleClick('discharge-record')}>Discharge Record</a>
-                </div>
-              </div>
-                {
-                    this.state.typeShow === 0 ? 
-                        <ReactFlow className='overview__graph' elements={this.state.elements} onElementClick={onElementClick}>
+         
+            isLoading === true 
+                ? <ReactLoading type='Bubbles' color="red" /> 
+                : 
+                  isUpload === true ? <div className="Upload"><div className="Card"><Upload apiUrl={API_IMPORT_DOCUMENT} /></div></div> : 
+                  <div className='overview'>
+                    
+                     <div className='overview__content'>
+                       <div className='overview__content__group'>
+                         <a
+                            onClick={() => this.handleClick('full_workflow')}
+                            className='overview__content__field margin__top__40' >Full Workflow
+                         </a>
+                         <a className='overview__content__field' onClick={() => this.handleClick('identity-card')}>Identity Card</a>
+                         <a className='overview__content__field' onClick={() => this.handleClick('discharge-record')}>Discharge Record</a>
+                      </div>
+                    </div>
+                   
+                    {
+                      this.state.typeShow === 0 ? 
+                        <ReactFlow className='overview__graph' elements={this.state.elements} onElementClick={(event, element) => this.onElementClick(event, element)}>
                             <Controls>
                                 <ControlButton onClick={() => this.refreshWorkflow()}>
                                     <img src = {RefreshIcon} className='photo__button'></img>
@@ -235,10 +245,10 @@ class Overview extends Component {
                              fields = {fields}
                              typeShow = {typeShow}
                          />
-                }
+                    }
             </div>
+          
         );
-//         return  <div className="Upload"><div className="Card"><Upload apiUrl={API_IMPORT_DOCUMENT}/></div></div>
     }
 }
     
