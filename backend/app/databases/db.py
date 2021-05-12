@@ -17,3 +17,7 @@ Base = declarative_base()
 from starlette.requests import Request
 def get_db(request: Request):
     return request.state.db
+
+
+def get_engine():
+    return engine

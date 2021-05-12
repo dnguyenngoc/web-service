@@ -13,6 +13,7 @@ from io import BytesIO
 from datetime import timedelta
 
 from databases.db import get_db
+from databases.db import get_engine
 from databases.repository_logic import document_logic, document_process_logic, document_field_logic
 from databases.repository_crud import document_crud, document_process_crud, document_type_crud
 from databases.entities import document_entity, document_process_entity
@@ -58,7 +59,8 @@ def upload_image_ftp(
 @router.post('/image/split')
 def upload_image_ftp_field(
     *, 
-    db_session: Session = Depends(get_db), 
+    db_session: Session = Depends(get_db),
+    engine = Depends(get_engine), 
     document_id: int = Form(...),
     name: str = Form(...),
     field_name: str = Form(...),
@@ -74,7 +76,6 @@ def upload_image_ftp_field(
         
     field = document_field_logic.get_by_name(db_session, field_name)
     if not field: raise HTTPException(status_code=400, detail="wrong field")
-    
     status_name = 'export'
     type_doc = doc.document_type.name
     ftp = FTP(config.FTP_URL, config.FTP_USERNAME, config.FTP_PASSWORD)
@@ -86,9 +87,9 @@ def upload_image_ftp_field(
     ftp.close()
     url = 'http://{host}:{port}/api/v1/ftp/image/{type_doc}/{status_name}/{string_date}/{name}'.format(
         host = config.BE_HOST, port = config.BE_PORT, type_doc = type_doc, status_name = status_name, string_date = string_date, name = name)
-    check_process = document_process_logic.read_by_document_id_and_field_id(db_session, doc.id, field.id)
+    check_process = document_process_logic.read_by_document_id_and_field_id(engine, doc.id, field.id)
     if check_process == 0:
-        return document_process_crud.create(
+        data = document_process_crud.create(
             db_session, 
             document_process_entity.DocumentProcessCreate(
                 name = field_name,
@@ -101,8 +102,9 @@ def upload_image_ftp_field(
                 create_date= time_utils.utc_now()
             )
         )
+        return data
     else:
-        return document_process_crud.update(
+        data = document_process_crud.update(
             db_session, 
             doc.id,
             {
@@ -112,9 +114,10 @@ def upload_image_ftp_field(
                 'type_id' : doc.type_id,
                 'url': url,
                 'field_id' : field.id,
-                'create_date': time_utils.utc_now()
+                'update_date': time_utils.utc_now()
             }
         )
+        return data
         
 
         

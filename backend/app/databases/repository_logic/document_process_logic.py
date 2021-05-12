@@ -14,11 +14,13 @@ def get_all_by_doc(db_session: Session, document_id) -> DocumentProcess:
                             .options(joinedload('document_field')) \
                             .all()
 
-def read_by_document_id_and_field_id(db_session: Session, document_id, field_id) -> DocumentProcess:
-     return db_session.query(DocumentProcess) \
-                            .filter(DocumentProcess.document_id==document_id and DocumentProcess.field_id == field_id) \
-                            .count()
-    
+def read_by_document_id_and_field_id(engine, document_id, field_id) -> DocumentProcess:
+    conn  = engine.connect()
+    data =  conn.execute("select count(*) from public.document_process where document_id = {document_id} and field_id = {field_id}".format(document_id = document_id, field_id = field_id))
+    conn.close()
+    data = [item for item in data]
+    return data[0]['count']
+
 
 def get_by_doc_id_and_status_limit(db_session: Session, document_id: int, status_id: int, limit: int) -> DocumentProcess:
     return db_session.query(DocumentProcess) \
