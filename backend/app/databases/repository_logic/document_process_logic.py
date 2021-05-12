@@ -18,3 +18,16 @@ def read_by_document_id_and_field_id(db_session: Session, document_id, field_id)
      return db_session.query(DocumentProcess) \
                             .filter(DocumentProcess.document_id==document_id and DocumentProcess.field_id == field_id) \
                             .count()
+    
+
+def get_by_doc_id_and_status_limit(db_session: Session, document_id: int, status_id: int, limit: int) -> DocumentProcess:
+    return db_session.query(DocumentProcess) \
+                            .filter(DocumentProcess.document_id==document_id and DocumentProcess.status_id == status_id) \
+                            .limit(limit) \
+                            .all()
+
+def get_not_ocr_limit(db_session: Session, is_extracted: bool, limit: int) -> DocumentProcess:
+    return db_session.query(DocumentProcess) \
+                            .filter(DocumentProcess.is_extracted==is_extracted) \
+                            .limit(limit) \
+                            .all()
