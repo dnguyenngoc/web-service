@@ -10,8 +10,8 @@ import '../styles/container.scss'
 import RefreshIcon from '../assets/images/refresh button.png'
 import Upload from './Upload.js'
 
-const API_SERVER = 'http://10.1.33.76:8081/api'
-// const API_SERVER = 'http://161.117.87.31:8081/api'
+// const API_SERVER = 'http://10.1.33.76:8081/api'
+const API_SERVER = 'http://161.117.87.31:8081/api'
 const API_IMPORT_DOCUMENT = API_SERVER + '/v1/ftp/image/import'
 
 function getCurrentDate(separator='-'){
@@ -164,6 +164,11 @@ class Overview extends Component {
     }
 
     async handleClick(type, date = this.state.day) {
+        this.setState({
+             isLoading: true,
+                origin: {}, 
+                crop: {},
+                fields: []})
         const dataId = new FormData()
         dataId.append('type_doc', type);
         dataId.append('status_code', 200);
@@ -200,6 +205,8 @@ class Overview extends Component {
             this.setState({typeShow: 0})
             window.location.reload(false);
         }
+        this.setState({
+             isLoading: false})
     }
 
     refreshWorkflow(){
