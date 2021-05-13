@@ -10,8 +10,8 @@ import '../styles/container.scss'
 import RefreshIcon from '../assets/images/refresh button.png'
 import Upload from './Upload.js'
 
-const API_SERVER = 'http://10.1.33.76:8081/api'
-// const API_SERVER = 'http://161.117.87.31:8081/api'
+// const API_SERVER = 'http://10.1.33.76:8081/api'
+const API_SERVER = 'http://161.117.87.31:8081/api'
 const API_IMPORT_DOCUMENT = API_SERVER + '/v1/ftp/image/import'
 
 function getCurrentDate(separator='-'){
