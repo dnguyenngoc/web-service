@@ -81,7 +81,7 @@ export default class MultipleImageUploadComponent extends Component {
     
      makeListImage(files, num){
         var con = []
-        const cha = []
+        var cha = []
         var k =1
         const len = files.length
         for (let i = 0; i< len; i++) {
@@ -95,6 +95,15 @@ export default class MultipleImageUploadComponent extends Component {
         }
         return cha
     }
+     makeListImage2(files){
+         var con = []
+         const len = files.length
+         for (let i = 0; i< len; i++) {
+            con.push(<div className='image-preview-x'><div className="image-content"> <img src={files[i]} alt="..."  className='imgfit'/></div></div>)
+         }
+         return (<div className='multi-preview'>{con}</div>)
+     }
+   
     
     render() {
         const {files, list, isUploadCompleted} = this.state;
@@ -102,7 +111,7 @@ export default class MultipleImageUploadComponent extends Component {
             <div className="mutiple-form">
                 <form>
                     <p>{isUploadCompleted === true ? "completed": ""}</p>
-                    {this.makeListImage(files, 5)}       
+                    {this.makeListImage2(files)}       
 
                     <div className="form-group">
                         <input type="file" className="form-control" onChange={this.uploadMultipleFiles} multiple />

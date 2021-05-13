@@ -16,20 +16,20 @@
                         .multi-preview{
                             display: flex;
                             flex-direction: row; 
-                            max-height: 130px;
+//                             max-height: 130px;
                              max-width: 640px;
-                            
+                            flex-wrap: wrap;
                             .image-preview-x{
-                                display: block;
-                                padding: 20px 10px;
+//                                 display: block;
+                                padding: 7px 10px;
                                 height: auto;
                                 .image-content{
-                                    height: 120px;
+                                    width: 120px;
+                                    height: 100%;
                                     img{
                                         border-radius: 15px 15px 15px 15px; 
-                                        height: 100px;
-                                        width: 134px;
-                                        max-width: 170px;
+                                        width: 120px;
+                                        height: 90px;
                                         box-shadow: 1px 1px 1px 2px #AAA;
                                     }
                                     
