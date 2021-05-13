@@ -55,3 +55,30 @@ def split_last(
             ]
         }
    
+
+@router.get('/ocr/last')
+def ocr_last(
+    *,
+    db_session: Session = Depends(get_db),
+    type_doc: str = Form(...),
+    status_code: str = Form(...),
+    skip: int = Form(None),
+):
+    if skip == None:
+        skip = 0
+        
+    status = status_logic.read_by_status_code(db_session, status_code)
+    if not status: raise HTTPException(status_code=400, detail="bad request")
+        
+    doc_type = document_type_logic.read_by_nane(db_session, type_doc)
+    if not doc_type: raise HTTPException(status_code=400, detail="bad request")
+    last_doc = document_logic.get_one_last_type_status(db_session, doc_type.id, status.id, skip)
+    if not last_doc: raise HTTPException(status_code=404, detail="not found")
+    fields = [{"name": item.name, "value": item.url, 'value_ocr': item.value} for item in last_doc.document_process]
+    obj = {
+        'id': last_doc.id, 
+        'origin': {"name": "origin", "value": last_doc.url},
+        'crop': {'name': 'crop', 'value': last_doc.crop_url},
+        'fields': fields,
+    }
+    return obj

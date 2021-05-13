@@ -9,7 +9,7 @@ from fastapi import Form
 from databases.db import get_db
 
 from databases.repository_logic import document_logic, document_type_logic, status_logic, document_process_logic
-from databases.repository_crud import document_crud
+from databases.repository_crud import document_crud, document_process_crud
 
 from helpers import time_utils
 
@@ -26,6 +26,30 @@ def get_all_docs_status(
     data = document_process_logic.get_not_ocr_limit(db_session, False, limit)
     if not data: raise HTTPException(status_code=404, detail="not found")
     return data
+
+@router.put('/complete-process')
+def update_complete(
+    *,
+    db_session: Session = Depends(get_db),
+    id: int = Form(...),
+    document_id: int = Form(...),
+    value: str = Form(None),
+):
+    data = document_process_crud.update(db_session, id, {'value': value, 'is_extracted': True, 'update_date': time_utils.utc_now()})
+    return data
+
+@router.put('/doc-export')
+def update_bad_document(
+    *,
+    document_id: int = Form(...),
+    status_code: int = Form(...),
+    db_session: Session = Depends(get_db),
+   
+):
+    status = status_logic.read_by_status_code(db_session, status_code)
+    if not status: raise HTTPException(status_code=400, detail="bad request")
+    docs = document_crud.update(db_session, document_id, {'status_id': status.id, 'update_date': time_utils.utc_now(), 'export_data': time_utils.utc_now()}) 
+    return docs
 
 
 @router.put('/{status_name}')

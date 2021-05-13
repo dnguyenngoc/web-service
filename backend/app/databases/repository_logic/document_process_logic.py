@@ -31,5 +31,13 @@ def get_by_doc_id_and_status_limit(db_session: Session, document_id: int, status
 def get_not_ocr_limit(db_session: Session, is_extracted: bool, limit: int) -> DocumentProcess:
     return db_session.query(DocumentProcess) \
                             .filter(DocumentProcess.is_extracted==is_extracted) \
+                            .order_by(DocumentProcess.document_id.asc()) \
                             .limit(limit) \
                             .all()
+
+def get_ocr_status_skip(db_session: Session, is_extracted: bool, skip: int) -> DocumentProcess:
+    return db_session.query(DocumentProcess) \
+                            .filter(DocumentProcess.is_extracted==is_extracted) \
+                            .order_by(DocumentProcess.update_date.desc()) \
+                            .offset(skip) \
+                            .first()
