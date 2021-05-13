@@ -32,6 +32,7 @@ class Overview extends Component {
         origin: {},
         crop: {},
         fields: [],
+        isOcrData: false,
         selectId: 0,
         day: getCurrentDate(),
         fullWorflow: {
@@ -53,6 +54,10 @@ class Overview extends Component {
            
         },
         dischargeRecord: {
+            len: 0,
+            data: {},
+        },
+        ocr: {
             len: 0,
             data: {},
         },
@@ -164,15 +169,35 @@ class Overview extends Component {
     }
 
     async handleClick(type, date = this.state.day) {
-        this.setState({
-             isLoading: true,
-                origin: {}, 
-                crop: {},
-                fields: []})
-        const dataId = new FormData()
-        dataId.append('type_doc', type);
-        dataId.append('status_code', 200);
-       if (type === 'identity-card') {
+   
+        this.setState({isOcrData: false})
+        if (type === 'ocr'){
+             await console.log('here')
+             const dataId = new FormData()
+            dataId.append('type_doc', 'identity-card');
+            dataId.append('status_code', 300);
+            dataId.append('skip', 0);
+            
+            await fetch(API_SERVER + '/v1/show/ocr/last', { method: 'POST', body: dataId})
+                .then(response => response.json())
+                .then(data => {
+                    this.setState({ocr: {data: data, len: 1}})
+                    console.log(data)
+                }
+            );
+            await this.setState({
+                origin: this.state.ocr.data.origin, 
+                crop: this.state.ocr.data.crop,
+                fields: this.state.ocr.data.fields,
+                typeShow: 3,
+                isOcrData: true,
+            });
+           
+        }
+       else if (type === 'identity-card') {
+            const dataId = new FormData() 
+            dataId.append('type_doc', type);
+            dataId.append('status_code', 200);
             const requestOptions = { method: 'POST', body: dataId}
             await fetch(API_SERVER + '/v1/show/document/' + type + '/200/last?skip=0', requestOptions)
                 .then(response => response.json())
@@ -187,6 +212,9 @@ class Overview extends Component {
                 typeShow: 1,
             });
        }else if (type === 'discharge-record') {
+            const dataId = new FormData() 
+            dataId.append('type_doc', type);
+            dataId.append('status_code', 200);
             await fetch(API_SERVER + '/v1/show/document/' + type +  '/200/last?skip=0', { method: 'POST', body: dataId})
                 .then(response => response.json())
                 .then(data => {
@@ -201,12 +229,13 @@ class Overview extends Component {
                 typeShow: 2,
             });
         }
+
         else {
+            console.log(type)
             this.setState({typeShow: 0})
             window.location.reload(false);
         }
-        this.setState({
-             isLoading: false})
+       
     }
 
     refreshWorkflow(){
@@ -215,7 +244,7 @@ class Overview extends Component {
 
     
     render() {
-        const {typeShow, origin, crop, fields, isLoading, isUpload  } = this.state;
+        const {typeShow, origin, crop, fields, isLoading, isUpload, isOcrData } = this.state;
 
         return (
          
@@ -233,6 +262,7 @@ class Overview extends Component {
                          </a>
                          <a className='overview__content__field' onClick={() => this.handleClick('identity-card')}>Identity Card</a>
                          <a className='overview__content__field' onClick={() => this.handleClick('discharge-record')}>Discharge Record</a>
+                         <a className='overview__content__field' onClick={() => this.handleClick('ocr')}>OCR</a>
                       </div>
                     </div>
                    
@@ -251,6 +281,7 @@ class Overview extends Component {
                              crop={crop}
                              fields = {fields}
                              typeShow = {typeShow}
+                             isOcrData = {isOcrData}
                          />
                     }
             </div>

@@ -10,7 +10,9 @@ class ImagePreview extends Component {
       crop: this.props.crop,
       fields: this.props.fields,
       typeShow: this.props.typeShow,
+      isOcrData: this.props.isOcrData,
     };
+      
   }
     
   makeFieldData(fields) {
@@ -25,26 +27,48 @@ class ImagePreview extends Component {
         )
       );
   }
+  
+    makeFieldDataOcr(fields) {
+      return(
+        fields.map((field) =>    
+          <div className = 'details'>
+            <p className = 'field-name'>{field.name}</p>
+            <a className = 'field-image'>
+                <p className='remove'>{field.value_ocr}</p>
+            </a>
+          </div>
+        )
+      );
+  }
+  
 
   render() {
-    const { origin, crop, fields, typeShow } = this.state;
+    const { origin, crop, fields, typeShow,  isOcrData } = this.state;
     return (
       <div className={ typeShow === 1 ? 'image-preview' : 'image-preview1' }>
         <div className='main-content'>
           <div className = 'origin'>
-             <p className = 'name-fix'>Origin Image</p>
+             <p className = 'name-fix'>Origin</p>
              <a>
                <img className = 'image-fix' src = {origin.value}></img>
              </a>
           </div>
           <div className = 'crop'>
-             <p className = 'name-fix'>Crop Image</p>
+             <p className = 'name-fix'>Crop</p>
              <a>
                <img className = 'image-fix' src = {crop.value}></img>
              </a>
           </div>
         </div>
-        <div className='field-content'>{this.makeFieldData(fields)}</div> 
+        <div className='field-datas'>
+            <div className='field-content'>{this.makeFieldData(fields)}</div> 
+            { isOcrData === true ?<div className='field-content'>{this.makeFieldDataOcr(fields)}</div>
+                : ""
+            }
+
+        </div>
+        
+        
       </div>
     );
   }

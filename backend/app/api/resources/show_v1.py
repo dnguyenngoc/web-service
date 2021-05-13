@@ -56,7 +56,7 @@ def split_last(
         }
    
 
-@router.get('/ocr/last')
+@router.post('/ocr/last')
 def ocr_last(
     *,
     db_session: Session = Depends(get_db),
