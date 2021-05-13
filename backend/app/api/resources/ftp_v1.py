@@ -83,6 +83,7 @@ def upload_image_ftp_field(
     string_date = time_utils.year_month_day_utc_string()
     path = type_doc + '/' + status_name + '/' + string_date
     ftp.chdir(path)
+    name = str(doc.id) +'_'+field_name + '.png'
     ftp.upload_byte_image(byte_image, path + '/' + name)
     ftp.close()
     url = 'http://{host}:{port}/api/v1/ftp/image/{type_doc}/{status_name}/{string_date}/{name}'.format(
@@ -145,6 +146,7 @@ def upload_image_ftp_crop(
     string_date = time_utils.year_month_day_utc_string()
     path = type_doc + '/' + status_name + '/' + string_date
     ftp.chdir(path)
+    name = str(doc.id) + "_" + 'crop' + '.png'
     ftp.upload_byte_image(byte_image, path + '/' + name)
     ftp.close()
     url = 'http://{host}:{port}/api/v1/ftp/image/{type_doc}/{status_name}/{string_date}/{name}'.format(
