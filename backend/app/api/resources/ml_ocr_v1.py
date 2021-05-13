@@ -36,6 +36,7 @@ def update_complete(
     value: str = Form(None),
 ):
     data = document_process_crud.update(db_session, id, {'value': value, 'is_extracted': True, 'update_date': time_utils.utc_now()})
+    
     return data
 
 @router.put('/doc-export')
@@ -48,7 +49,7 @@ def update_bad_document(
 ):
     status = status_logic.read_by_status_code(db_session, status_code)
     if not status: raise HTTPException(status_code=400, detail="bad request")
-    docs = document_crud.update(db_session, document_id, {'status_id': status.id, 'update_date': time_utils.utc_now(), 'export_data': time_utils.utc_now()}) 
+    docs = document_crud.update(db_session, document_id, {'status_id': status.id, 'update_date': time_utils.utc_now(), 'export_date': time_utils.utc_now()}) 
     return docs
 
 
